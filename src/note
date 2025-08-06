@@ -1,0 +1,81 @@
+    Java Collection Tutorial
+Java Collection Framework holds all the collection classes and interfaces.
+The Collection interface (java.util.Collection) and Map interface (java.util.Map).
+are the two main “root” interfaces of Java collection classes.
+    What is a Framework?
+A framework is a set of classes and interfaces which provide a ready-made architecture.
+-Collection: A group of individual objects that represent a single entity is known as a collection.
+-Collection Framework: To represent a group of objects as a single entity in the Java programming
+language we need classes and interfaces defined by the Collection Framework.
+-Collection Interface: It is the blueprint of the collection class.
+-Collections Class: It is present in java.util package and is a member of Collection Framework.
+    Advantages of the collections framework
+1) Reduces the programming effort as the programmer does not have to worry about designing the Collection class.
+On the same hand java being object-oriented language advances in achieving "abstraction".
+Abstraction in Java is the process of hiding internal implementation details and showing only essential functionality to the user.
+It focuses on what an object does rather than how it does it.
+2)Increases program speed and quality as the programmer now is not worried about thinking best implementation for a specific data structure.
+3)The API that implements these interfaces are now having common sets of methods be it of any interfaces such as Collection, Set, List, and Map.
+
+Note: All these collections can be imported using:
+import java.util.*;
+
+However, single classes can also be imported by replacing * with the class name
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+The utility package, "java.util" contains all the classes and interfaces that are required by the collection framework.
+The collection framework contains an interface named an "iterable interface" which provides the iterator to iterate through all the collections.
+
+    Iterable interface
+is the root interface for the entire collection framework.
+The main functionality of this interface is to provide an iterator for the collections.
+
+    The following 6 interfaces are described below
+    Collection Interface
+contains all the basic methods which every collection has
+like adding the data into the collection, removing the data, clearing the data, etc
+All these methods are implemented in this interface because these methods are implemented by all the classes irrespective of their style of implementation.
+    List Interface
+It is a child interface of the collection interface.
+It deals with the arrays and lists types of operations like ArrayList, LinkedList, Vector, and Stack.
+1)ArrayList
+provides us with dynamic arrays in Java
+The size of an ArrayList is increased automatically if the collection grows or shrinks.
+    ArrayList methods
+1) add() :  is used to add elements to the list.
+There are two versions of the ArrayList add() method i.e.
+one without specifying an index
+and another with a specified index.
+2)There are 3 ways to remove an element from ArrayList
+-Using remove() method by indexes(default)
+-Using remove() method by values
+-Using remove() method over iterators
+Note:
+It is not recommended to use ArrayList.remove() when iterating over elements.
+when using iterators,
+-next is used to get the current element
+-while hasNext is used to check if there is a current element
+3)set() Method:  is used to replace an element at a specified position with a new value.
+This is very useful when we need to update an existing element in an ArrayList while maintaining the list's structure.
+    Syntax of ArrayList set() Method
+set(int index, E element)
+-index: Index of the element to replace.
+-element: Element to be stored at the specified position.
+Returns Value: It returns the element that was previously at the specified position.
+4) How to Remove Duplicates from ArrayList in Java
+-Using Iterator
+step1: Get the ArrayList with duplicate values.
+step2: Create another ArrayList.
+step3: Traverse through the first arraylist and store the first appearance of each element into the second arraylist using contains() method.
+step4: The second ArrayList contains the elements with duplicates removed.
+-using LinkedHashSet
+A better way  is to remove duplicates from an ArrayList is to convert it into a Set that does not allow duplicates.
+Hence LinkedHashSet is the best option available as this do not allows duplicates as well it preserves the insertion order.
+-Using Java 8 Stream.distinct()
+You can use the distinct() method from the Stream API
+The distinct() method return a new Stream without duplicates elements based on the result returned by equals() method,
+which can be used for further processing .
+ The actual processing of Stream pipeline starts only after calling terminal methods like forEach() or collect().
+5)How to reverse an ArrayList
+-1. By writing our own function()
