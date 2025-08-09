@@ -78,4 +78,56 @@ The distinct() method return a new Stream without duplicates elements based on t
 which can be used for further processing .
  The actual processing of Stream pipeline starts only after calling terminal methods like forEach() or collect().
 5)How to reverse an ArrayList
--1. By writing our own function()
+-a). By writing our own function()
+    logic 1
+reverseArrayList() method in RevArrayList class contains logic for reversing an arraylist with integer objects.
+This method takes an arraylist as a parameter, traverses in reverse order and adds all the elements to the newly created arraylist.
+Finally the reversed arraylist is returned.
+    logic 2
+- Run the loop for n/2 times where 'n' is the number of elements in the arraylist.
+- In the first pass, Swap the first and nth element
+-In the second pass, Swap the second and (n-1)th element and so on till you reach the mid of the arraylist.
+-Return the arraylist after the loop termination.
+-b). By using Collections class:
+Collections is a class in java.util package which contains various static methods for searching, sorting, reversing, finding max, min....etc
+We can make use of the In-built Collections.reverse() method for reversing an arraylist.
+It takes a list as an input parameter and returns the reversed list.
+-c)Reversing an arraylist of user defined objects
+The arraylist is reversed using In-built reverse() method of Collections class.
+-d)Using ListIterator
+
+6)Convertng ArrayList to String Array
+ArrayList class is derived from the List interface.
+Here we are given an ArrayList of strings and the task is to convert the ArrayList to a string array.
+Methods:
+    Using get() method of ArrayList class
+-Get the ArrayList of Strings.
+-Find the size of ArrayList using size() method, and Create a String Array of this size.
+-Fetch each element of the ArrayList one by one using get() method.
+-Assigned each element into String Array using assignment(=) operator.
+-Printing string array.
+    Using toArray() method of ArrayList class
+Here we will be creating an object array to store elements received from ArrayList by creating an array of strings.
+-Get the ArrayList of String.
+-Convert ArrayList to Object array using toArray() method.
+-Iterate and convert each element to the desired type using typecasting.
+-Here it is converted to String type and added to the string array.
+-Print the string array
+    Using copyOf() method of Arrays class
+-Get the ArrayList of String
+-Convert ArrayList to Object array using toArray() method.
+-Convert it to String Array using Arrays.copyOf() method.
+-Print String Array.
+
+7)Getting a sub-list from an ArrayList
+The subList() method of the ArrayList class in Java is used to retrieve a portion of an ArrayList between specified indices.
+When we perform any modifications to the sub list, that will reflect in the original list and vice versa.
+    Syntax of ArrayList subList() Method
+public List<E> subList(int fromIndex, int toIndex);
+    Parameters:
+fromIndex: Starting index (inclusive) of the sublist.
+toIndex: Ending index (exclusive) of the sublist.
+Returns Value: It returns a view of the portion of this list between the specified indices.
+    Exception: This method throws the following Exceptions.
+-IndexOutOfBoundsException: If an endpoint index value is out of range (fromIndex > size).
+-IllegalArgumentException: If an endpoint indices are out of order (fromIndex > toIndex).

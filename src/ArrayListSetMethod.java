@@ -14,7 +14,6 @@ public class ArrayListSetMethod {
 
             //Replace element at index 3 with 9
             int r = n.set(3, 9);
-            int v = n.set(7, 9);
             System.out.println("After operation: " + n);
             System.out.println("Replaced element: " + r);
         } catch (IndexOutOfBoundsException e) {

@@ -6,7 +6,7 @@ public class ArrayListReverse {
     public ArrayList<Integer> reverseArrayList(ArrayList<Integer> alist) {
         //ArrayList for storing reversed elements
         ArrayList<Integer> revArrayList = new ArrayList<Integer>();
-        for (int i = alist.size() - 1; i >= 0; i++) {
+        for (int i = alist.size() - 1; i >= 0; i--) {
             //Append the element in reverse
             revArrayList.add(alist.get(i));
 

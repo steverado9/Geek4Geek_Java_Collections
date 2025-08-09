@@ -25,9 +25,9 @@ public class ArrayListRemoveDuplicate {
         System.out.println("ArrayList with duplicates: " + list);
 
         //Remove duplicates
-        ArrayList<Integer> newList = removeDuplicate(list);
+        ArrayList<Integer> finalList = removeDuplicate(list);
 
         //print the arraylist with duplicates removed
-        System.out.println("ArrayList with dulicates removed: " + newList);
+        System.out.println("ArrayList with dulicates removed: " + finalList);
     }
 }
