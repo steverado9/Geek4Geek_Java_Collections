@@ -39,7 +39,7 @@ All these methods are implemented in this interface because these methods are im
     List Interface
 It is a child interface of the collection interface.
 It deals with the arrays and lists types of operations like ArrayList, LinkedList, Vector, and Stack.
-1)ArrayList
+    1)ArrayList
 provides us with dynamic arrays in Java
 The size of an ArrayList is increased automatically if the collection grows or shrinks.
     ArrayList methods
@@ -132,7 +132,7 @@ Returns Value: It returns a view of the portion of this list between the specifi
 -IndexOutOfBoundsException: If an endpoint index value is out of range (fromIndex > size).
 -IllegalArgumentException: If an endpoint indices are out of order (fromIndex > toIndex).
 
-    LinkedList in Java
+    2)LinkedList
 Linked List is a part of the Collection framework present in java.util package.
 This class is an implementation of the LinkedList data structure,
 which is a linear data structure where the elements are
@@ -206,3 +206,65 @@ each element is separated by commas and the String is enclosed in square bracket
 for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
 -CopyOnWriteArrayList: This class implements the list interface.
 It is an enhanced version of ArrayList in which all the modifications(add, set, remove, etc.) are implemented by making a fresh copy of the list.
+    Accessing elements of a linked list
+In Java, the get() method of LinkedList is used to fetch or retrieve an element at a specific index from a LinkedList.
+    Check if the LinkedList contains the Element
+In Java, the contains() method of LinkedList is used to check whether an element is present in a LinkedList or not.
+It takes the element as a parameter and returns True if the element is present in the list.
+    Remove All Elements from a LinkedList
+In Java, the clear() is used to remove all the elements from a LinkedList.
+This method only clears all the element from the list and not deletes the list.
+After calling this method, the list will be empty.
+    Iterate over LinkedList using Iterator
+In Java, the listIterator() method of the LinkedList class returns
+a ListIterator that allows us to iterate over the elements of the list.
+Now there are two versions of listIterator() method i.e. without index and with an index.
+1. listIterator() Method with No Parameters
+It creates an ListIterator that starts form the beginning of the list.
+2. listIterator() Method with an Index
+The listIterator(int index) method creates a ListIterator that starts iterating from the specified index in the list.
+    3)Vector
+Vector is a resizable array in Java, found in the java.util package.
+It is part of the Collection Framework and works like an ArrayList,
+but it is synchronized,
+meaning it is safe to use in multi-threaded programs.
+However, this makes it a bit slower than ArrayList.
+   Key Features of Vector
+-It expands as elements are added.
+-The Vector class is synchronized in nature means it is thread-safe by default.
+-Like an ArrayList, it maintains insertion order.
+-It allows duplicates and nulls.
+-It implements List, RandomAccess, Cloneable and Serializable.
+    Vector Capacity in Java
+When a Vector is created using the default constructor, it is initialized with a default capacity of 10.
+This means it can hold up to 10 elements before needing to grow in size.
+If the number of elements exceeds the current capacity, the Vector automatically increases its capacity.
+    Formula to calculate new capacity
+newCapacity = oldCapacity * 2
+    Constructors of Vector
+1. Vector(): Creates a default vector of the initial capacity is 10.
+    Vector<E> v = new Vector<E>();
+2. Vector(int size): Creates a vector whose initial capacity is specified by size.
+    Vector<E> v = new Vector<E>(int size);
+3. Vector(int size, int incr):  Creates a vector whose initial capacity is specified by size and increment is specified by incr.
+It specifies the number of elements to allocate each time a vector is resized upward.
+4. Vector(Collection c): Creates a vector that contains the elements of collection c.
+Note:
+-If the vector increment is not specified then it’s capacity will be doubled in every increment cycle.
+-The capacity of a vector cannot be below the size, it may equal to it.
+1) adding elements in a vector
+To add the elements to the Vector, we use the add() method.
+-add(Object): This method is used to add an element at the end of the Vector.
+-add(int index, Object): This method is used to add an element at a specific index in the Vector.
+2) Updating Elements
+To update an element in a Vector, use the set() method.
+It takes the index and the new element to replace the existing one at that position.
+3) Removing Elements
+To remove an element from a Vector, we can use the remove() method.
+They are:
+-remove(Object): This method is used to remove an object from the Vector.
+If there are multiple such objects, then the first occurrence of the object is removed.
+-remove(int index): This method takes an integer value which simply removes the element present at that specific index in the Vector.
+After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
+4) Iterating the Vector
+The most famous ways are by using the basic for loop in combination with a get() method to get the element at a specific index and the advanced for a loop.
