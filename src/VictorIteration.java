@@ -15,9 +15,6 @@ public class VictorIteration {
             System.out.print(v.get(i) + " ");
         }
 
-        System.out.println();
-
-
         for (String str : v)
             System.out.print(str + " ");
 

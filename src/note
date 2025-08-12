@@ -223,6 +223,7 @@ Now there are two versions of listIterator() method i.e. without index and with 
 It creates an ListIterator that starts form the beginning of the list.
 2. listIterator() Method with an Index
 The listIterator(int index) method creates a ListIterator that starts iterating from the specified index in the list.
+
     3)Vector
 Vector is a resizable array in Java, found in the java.util package.
 It is part of the Collection Framework and works like an ArrayList,
@@ -268,3 +269,139 @@ If there are multiple such objects, then the first occurrence of the object is r
 After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
 4) Iterating the Vector
 The most famous ways are by using the basic for loop in combination with a get() method to get the element at a specific index and the advanced for a loop.
+    Vector vs ArrayList in Java
+ArrayList and Vectors both implement the List interface,
+and both use (dynamically resizable) arrays for their internal data structure.
+      ArrayList	                        Vector
+1) ArrayList is not synchronized.       Vector is synchronized.
+2) ArrayList increments 50% of the      Vector increments 100% means doubles the array size
+    current array size if the number    if the total number of elements exceeds its capacity.
+ of elements exceeds its capacity.
+3)ArrayList is not a legacy class.      Vector is a legacy class.
+4)ArrayList is fast because             Vector is slow because it is synchronized.
+it is non-synchronized.
+5)ArrayList uses the Iterator           A Vector can use the Iterator interface or
+interface to traverse the elements      Enumeration interface to traverse the elements.
+6)ArrayList performance is high         Vector performance is low.
+7)Multiple threads is allowed           only one threads are allowed.
+    Significant Differences between ArrayList and Vector
+Synchronization:
+Vector is synchronized, which means only one thread at a time can access the code.
+while ArrayList is not synchronized, which means multiple threads can work on ArrayList at the same time.
+    Disadvantages of using Vector in Java
+1)The synchronization in Vector can lead to slower performance compared to other collection classes, such as ArrayList.
+2)If you don't need the synchronization features of Vector, using it will add unnecessary overhead to your code.
+    Methods in Vector Class
+1)add(E e): Appends the specified element to the end of this Vector.
+2)add(int index, E element): Inserts the specified element at the specified position in this Vector.
+3)addAll(Collection<?extends E> c): Appends all elements from the given collection to the end of this Vector.
+4)addAll(int index,Collection<? extends E> c): Insert all of the elements in the specified Collection into this
+Vector at the specified position.
+5)addElement(E obj): Adds the specified element to the end, increasing size by one.
+6)capacity(): Returns the current capacity of this vector.
+7)clear(): Removes all of the elements from this Vector.
+8)clone(): Returns a clone of this vector.
+9)contains(Object o): Returns true if this vector contains the specified element.
+10)containsAll(Collection<?> c): Returns true if this Vector contains all of the elements in the specified Collection.
+11)copyInto(Object[] anArray): Copies the components of this vector into the specified array.
+12)elementAt(int index): Returns the component at the specified index.
+13)elements(): Returns an enumeration of the components of this vector.
+14)ensureCapacity(int minCapacity): Increases capacity to ensure it can hold at least the specified number of elements.
+15)equals(Object o): Compares the specified Object with this Vector for equality.
+16)firstElement(): Returns the first component (the item at index 0) of this vector.
+17)forEach(Consumer<?super E> action): Performs the given action for each element of the Iterable until all elements
+have been processed or the action throws an exception.
+18)get(int index): Returns the element at the specified position in this Vector.
+19)hashCode(): Returns the hash code value for this Vector.
+20)indexOf(Object o): Returns index of the first occurrence of the element or -1 if not found.
+21)indexOf(Object o, int index): Returns index of the first occurrence starting from the given index.
+22)insertElementAt(E obj, int index): Inserts the specified object as a component in this vector at the specified index.
+23)isEmpty(): Tests if this vector has no components.
+24)iterator(): Returns an iterator over the elements in this list in a proper sequence.
+25)lastElement(): Returns the last component of the vector.
+26)lastIndexOf(Object o): Returns the index of the last occurrence of the element or -1 if not found.
+27)lastIndexOf(Object o, int index): Returns index of the last occurrence before the given index.
+28)listIterator(): Returns a list iterator over the elements in this list (in proper sequence).
+29)listIterator(int index): Returns a list iterator over the elements in this list (in proper sequence),
+starting at the specified position in the list.
+30)remove(int index): Removes the element at the specified position in this Vector.
+31)remove(Object o): Removes the first occurrence of the specified element.
+32)removeAll(Collection<?> c): Removes from this Vector all of its elements contained in the specified Collection.
+33)removeAllElements(): Removes all components from this vector and sets its size to zero.
+34)removeElement(Object obj): Removes the first (lowest-indexed) occurrence of the argument from this vector.
+35)removeElementAt(int index): Deletes the component at the specified index.
+36)removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+37)removeRange(int fromIndex,int toIndex): Removes from this list all of the elements whose index is between fromIndex,
+inclusive and toIndex, exclusive.
+38)replaceAll(UnaryOperator<E> operator): Replaces each element of this list with the result of applying the operator to that element.
+39)retainAll(Collection<?> c): Retains only the elements in this Vector contained in the specified Collection.
+40)set(int index, E element): Replaces the element at the specified position in this Vector with the specified element.
+41)setElementAt(E obj, int index): Sets the component at the specified index of this vector to be the specified object.
+42)setSize(int newSize): Sets the size of this vector.
+43)size(): Returns the number of components in this vector.
+44)sort(Comparator<? super E> c): Sorts this list according to the order induced by the specified Comparator.
+45)spliterator(): Creates a late-binding and fail-fast Spliterator over the elements in this list.
+46)subList(int fromIndex, int toIndex): Returns a view of the portion of this List between fromIndex,
+inclusive and toIndex, exclusive.
+47)toArray(): Returns an array containing all of the elements in this Vector in the correct order.
+48)toArray(T[] a): Returns an array containing all the elements.
+49)toString(): Returns a string representation of this Vector, containing the String representation of each element.
+50)trimToSize(): Trims the capacity of this vector to be the vector's current size.
+     Vector provides us with dynamic arrays in Java.
+This is a legacy class. It is a thread-safe class.
+This is not recommended being used in a single-threaded environment as it might cause extra overheads.
+However, to overcome this in Vectors place one can readily use ArrayList.
+A single-threaded environment is one where a program can only execute one task at a time.
+    How to check if a vector is empty
+The Java.util.Vector.isEmpty() method in Java is used to check and verify if a Vector is empty or not.
+It returns True if the Vector is empty else it returns False.
+    How to Iterate the Vector Elements in the Reverse Order in Java
+We will be using two methods:
+1)Using For Loop
+2)Using ListIterator
+The ListIterator method takes the starting index from where traversal has to begin and returns the ListIterator.
+ListIterator has methods to traversal forward as well as backward.
+We will pass starting index as equal to the size of the array, and then we will use the hasPrevious() method of ListIterator,
+in which we will print the backward element to the current index if exists.
+    How to copy one java Vector to Another Vector in java
+Previously vector was a part of legacy classes but now it is part of Collections.
+It also implements a List interface, so we can use any method of list interface on vectors also.
+    Ways To copy elements of one vector to another:
+1)Passing in the constructor
+-In this approach, we will simply pass the one Vector into the other Vector's constructor.
+-By using this approach if we change in first vector values then it will not change the values of the second vector.
+-This is the easiest way of duplicating the vector values.This is the easiest way of duplicating the vector values.
+2)Adding one by one using add() method
+-In this approach, we will iterate over each element of  Vector and add that element in the second Vector.
+-Here if you change the first Vector element then it will not change the elements of the second Vector.
+-It is not the best approach but it's a simple iteration process.
+    How to Find the Minimum or Maximum Element from the Vector in Java?
+Methods:
+1)Using Collection.min() and Collection.max() methods.
+Collections package offers a static method of finding the minimum and maximum in a collection.
+These methods are Collections.max() and Collections.min().
+-Collections.max() finds the maximum element
+-Collections.min() finds the minimum element in a collection.
+2)Using Iterating over vector elements setting min-max.
+-Take a variable say minNumber, and initialized to the maximum value later on to compare and update.
+-Take a variable say maxNumber, and initialized to minimum value later on to compare an update.
+-Iterate through Vector and compare each element with the above two-variable -
+ minNumber
+ maxNumber
+ -If the number is less than minNumber, update the value of minNumber.
+ -If the number is greater than maxNumber, update the value of maxNumber.
+
+    Stack
+This class is based on the basic principle of last-in-first-out.
+This is a legacy class.
+This inherits from a Vector class.
+It is also a thread-safe class.
+This is not recommended being used in a single-threaded environment as it might cause extra overheads.
+However, to overcome this in Vectors place one can readily use ArrayDeque.
+-ArrayDeque: ArrayDeque is a resizable array implementation of the Deque interface.
+which stands for double-ended queue.
+-It allows elements to be added or removed from both ends efficiently.
+-It can be used as a stack (LIFO) or a queue (FIFO).
+-Operations like addFirst(), addLast(), removeFirst(), removeLast() are all done in constant time O(1).
+-The ArrayDeque class implements these two interfaces Queue interface and Deque interface. s
+upport concurrent access by multiple threads.
