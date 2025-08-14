@@ -391,7 +391,7 @@ These methods are Collections.max() and Collections.min().
  -If the number is less than minNumber, update the value of minNumber.
  -If the number is greater than maxNumber, update the value of maxNumber.
 
-    Stack
+    4)Stack
 This class is based on the basic principle of last-in-first-out.
 This is a legacy class.
 This inherits from a Vector class.
@@ -492,3 +492,89 @@ inclusive, and toIndex, exclusive.
 correct order; the runtime type of the returned array is that of the specified array.
 44)toString(): This method returns a string representation of this Vector, containing the String representation of each element.
 45)trimToSize(): This method trims the capacity of this vector to be the vector's current size.
+    How to check if a stack is empty
+The java.util.Stack.empty() method in Java is used to check whether a stack is empty or not.
+The method is of boolean type and returns true if the stack is empty else false.
+    How to Search Element in Stacks
+The java.util.Stack.search(Object element) method in Java is used to search for an element in the stack and get its distance from the top.
+This method starts the count of the position from 1 and not from 0.
+The element that is on the top of the stack is considered to be at position 1.
+The method returns its position if the element is successfully found and returns -1 if the element is absent.
+Parameters: The method accepts one parameter element which refers to the element that is required to be searched for in the Stack.
+
+    5)Abstract List
+The AbstractList class in Java is a part of the Java Collection Framework.
+It implements the Collection interface and the AbstractCollection class.
+"AbstractCollection":  This is an unmodifiable collection.
+AbstractList class provides a skeletal implementation of the List interface,
+to minimize the effort required to implement this interface.
+Note: For sequential access data (such as a linked list),
+"AbstractSequentialList" should be used in preference to this class.
+    Constructor: protected AbstractList()
+This is the default constructor, but being protected, it doesn't allow to create an AbstractList object.
+    Methods in AbstractList
+1)add(int index, E element): Inserts the specified element at the specified position in this list (optional operation).
+2)add(E e):Appends the specified element to the end of this list (optional operation).
+3)addAll(int index, Collection<? extends E> c): Inserts all of the elements in the specified collection
+into this list at the specified position (optional operation).
+4)clear(): Removes all of the elements from this list (optional operation).
+5)equals(Object o): Compares the specified object with this list for equality.
+6)get(int index): Returns the element at the specified position in this list.
+7)hashCode(): Returns the hash code value for this list.
+8)indexOf(Object o): Returns the index of the first occurrence of the specified element in this list,
+or -1 if this list does not contain the element.
+9) iterator(): Returns an iterator over the elements in this list in proper sequence.
+10)lastIndexOf(Object o): Returns the index of the last occurrence of the specified element in this list,
+or -1 if this list does not contain the element.
+11)listIterator(): Returns a list iterator over the elements in this list (in proper sequence).
+12)listIterator(int index): Returns a list iterator over the elements in this list (in proper sequence),
+starting at the specified position in the list.
+13)remove(int index): Removes the element at the specified position in this list (optional operation).
+14) removeRange(int fromIndex, int toIndex): Removes from this list all of the elements whose index is between
+fromIndex, inclusive, and toIndex, exclusive.
+15) set(int index, E element): Replaces the element at the specified position in this list with the
+specified element (optional operation)
+16) subList(int fromIndex, int toIndex): Returns a view of the portion of this list between the specified fromIndex,
+inclusive, and toIndex, exclusive.
+    Methods declared in class java.util.AbstractCollection
+1)addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this
+collection (optional operation).
+2)contains(Object o): Returns true if this collection contains the specified element.
+3)containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+4)isEmpty(): Returns true if this collection contains no elements.
+5) remove(Object o): Removes a single instance of the specified element from this collection, if it is present (optional operation).
+7)removeAll(Collection<?> c): Removes all of this collection's elements that are also contained in the specified
+collection (optional operation).
+8) retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified
+collection (optional operation).
+9) toArray(): Returns an array containing all of the elements in this collection.
+10)toArray(T[] a): Returns an array containing all of the elements in this collection; the runtime type of the returned
+array is that of the specified array.
+11) toString(): Returns a string representation of this collection.
+    Methods declared in interface java.util.Collection
+1)parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2)removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that
+satisfy the given predicate.
+3)stream(): Returns a sequential Stream with this collection as its source.
+4)toArray(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection, using the
+provided generator function to allocate the returned array.
+    Methods declared in interface java.util.List
+1)addAll(Collection<? extends E> c): Appends all of the elements in the specified collection to the end of this list,
+in the order that they are returned by the specified collection's iterator (optional operation).
+2)contains(Object o): Returns true if this list contains the specified element.
+3) containsAll(Collection<?> c): Returns true if this list contains all of the elements of the specified collection.
+4)isEmpty(): Returns true if this list contains no elements.
+5)remove(int index): Removes the element at the specified position in this list (optional operation).
+6)removeAll(Collection<?> c): Removes from this list all of its elements that are contained in the specified
+collection (optional operation).
+7)replaceAll(UnaryOperator<E> operator): Replaces each element of this list with the result of applying the operator
+to that element.
+8)retainAll(Collection<?> c): Retains only the elements in this list that are contained in the specified collection
+(optional operation).
+9)size(): Returns the number of elements in this list.
+10)sort(Comparator<? super E> c): Sorts this list according to the order induced by the specified Comparator.
+11)spliterator(): Creates a Spliterator over the elements in this list.
+12) toArray(): Returns an array containing all of the elements in this list in proper sequence
+(from first to last element).
+13) toArray(T[] a): Returns an array containing all of the elements in this list in proper sequence
+(from first to last element); the runtime type of the returned array is that of the specified array.
