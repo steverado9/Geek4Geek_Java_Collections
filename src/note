@@ -35,13 +35,31 @@ The main functionality of this interface is to provide an iterator for the colle
     Collection Interface
 contains all the basic methods which every collection has
 like adding the data into the collection, removing the data, clearing the data, etc
-All these methods are implemented in this interface because these methods are implemented by all the classes irrespective of their style of implementation.
+All these methods are implemented in this interface because these methods are implemented by all the
+classes irrespective of their style of implementation.
     List Interface
 It is a child interface of the collection interface.
 It deals with the arrays and lists types of operations like ArrayList, LinkedList, Vector, and Stack.
     1)ArrayList
 provides us with dynamic arrays in Java
 The size of an ArrayList is increased automatically if the collection grows or shrinks.
+    Key Features
+-Resizable Array: ArrayList can automatically grow dynamically in size.
+-Indexed Access: ArrayList elements can be accessed using indices like arrays.
+-Supports Generics: It ensures type safety at compile-time.
+-Not Synchronized: ArrayList uses Collections.synchronizedList() for thread safety.
+-Allows Null and Duplicates: ArrayList allows both null values and duplicate elements.
+-Maintains Insertion Order: Elements are stored in the order they are added.
+    Constructors of ArrayList in Java
+In order to Create an ArrayList, we need to create an object of the ArrayList class.
+The ArrayList class consists of various constructors which allow the possible creation of the array list.
+1. ArrayList(): This constructor is used to build an empty array list.
+    ArrayList<Integer> arr = new ArrayList<>();
+2. ArrayList(Collection c): This constructor is used to build an array list initialized
+with the elements from the collection c.
+    ArrayList<String> arr = new ArrayList<>(collection);
+3. ArrayList(int capacity): This constructor is used to build an array list with the initial capacity being specified.
+    ArrayList<Double> arr = new ArrayList<>(20);
     ArrayList methods
 1) add() :  is used to add elements to the list.
 There are two versions of the ArrayList add() method i.e.
@@ -170,9 +188,12 @@ in the order that they are returned by the specified collection's iterator.
 12)get(int index): This method returns the element at the specified position in this list.
 13)getFirst(): This method returns the first element in this list.
 14)getLast(): This method returns the last element in this list.
-15)indexOf(Object o): This method returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
-16)lastIndexOf(Object o): This method returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element.
-17)listIterator(int index): This method returns a list-iterator of the elements in this list (in proper sequence), starting at the specified position in the list.
+15)indexOf(Object o): This method returns the index of the first occurrence of the specified element in this list,
+or -1 if this list does not contain the element.
+16)lastIndexOf(Object o): This method returns the index of the last occurrence of the specified element in this list,
+or -1 if this list does not contain the element.
+17)listIterator(int index): This method returns a list-iterator of the elements in this list (in proper sequence),
+starting at the specified position in the list.
 18)offer(E e): This method Adds the specified element as the tail (last element) of this list.
 19)offerFirst(E e): This method Inserts the specified element at the front of this list.
 20)offerLast(E e): This method Inserts the specified element at the end of this list.
@@ -268,7 +289,8 @@ If there are multiple such objects, then the first occurrence of the object is r
 -remove(int index): This method takes an integer value which simply removes the element present at that specific index in the Vector.
 After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
 4) Iterating the Vector
-The most famous ways are by using the basic for loop in combination with a get() method to get the element at a specific index and the advanced for a loop.
+The most famous ways are by using the basic for loop in combination with a get() method to get the element at
+a specific index and the advanced for loop.
     Vector vs ArrayList in Java
 ArrayList and Vectors both implement the List interface,
 and both use (dynamically resizable) arrays for their internal data structure.
@@ -370,7 +392,7 @@ It also implements a List interface, so we can use any method of list interface 
 1)Passing in the constructor
 -In this approach, we will simply pass the one Vector into the other Vector's constructor.
 -By using this approach if we change in first vector values then it will not change the values of the second vector.
--This is the easiest way of duplicating the vector values.This is the easiest way of duplicating the vector values.
+This is the easiest way of duplicating the vector values.
 2)Adding one by one using add() method
 -In this approach, we will iterate over each element of  Vector and add that element in the second Vector.
 -Here if you change the first Vector element then it will not change the elements of the second Vector.
@@ -403,8 +425,8 @@ which stands for double-ended queue.
 -It allows elements to be added or removed from both ends efficiently.
 -It can be used as a stack (LIFO) or a queue (FIFO).
 -Operations like addFirst(), addLast(), removeFirst(), removeLast() are all done in constant time O(1).
--The ArrayDeque class implements these two interfaces Queue interface and Deque interface. s
-upport concurrent access by multiple threads.
+-The ArrayDeque class implements these two interfaces Queue interface and Deque interface.
+support concurrent access by multiple threads.
 In Java, a Stack is a linear data structure that follows the Last In First Out (LIFO) principle.
 and is defined in the java.util package
 Internally, it extends the Vector class.
@@ -578,3 +600,153 @@ to that element.
 (from first to last element).
 13) toArray(T[] a): Returns an array containing all of the elements in this list in proper sequence
 (from first to last element); the runtime type of the returned array is that of the specified array.
+The AbstractList class in Java is an abstract class that provides a skeletal implementation of the List interface.
+By extending the AbstractList class, you only need to implement the get and size methods,
+which provides a basic implementation of a list.
+    Advantages of using AbstractList in Java
+1.Reduced code duplication:
+By using the AbstractList class as a base, you can reduce the amount of code that you need to write to implement a list,
+since many of the common methods have already been implemented for you.
+2.Consistent behavior:
+Since the AbstractList class implements many of the methods in the List interface,
+you can be sure that your implementation will have consistent behavior with other list implementations,
+like ArrayList and LinkedList.
+    Disadvantages of using AbstractList in Java
+1.Limited functionality:
+Since the AbstractList class is an abstract class,
+it provides only a basic implementation of a list.
+You may need to implement additional methods to provide the full functionality required by your application.
+2.Increased complexity:
+By extending the AbstractList class, you are increasing the complexity of your code,
+since you are relying on the base class to provide some of the behavior.
+
+    6. AbstractSequentialList
+The AbstractSequentialList class in Java is a part of the Java Collection Framework.
+and implements the Collection interface and the AbstractCollection class.
+This class provides a skeletal implementation of the List interface to minimize the effort required to implement
+this interface backed by a "sequential access" data store.
+It is used to implement an unmodifiable list,
+for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
+    Declaration of AbstractSequentialList
+public abstract class AbstractSequentialList<E> extends AbstractList<E>
+Where E is the type of element maintained by this List.
+It implements Iterable<E>, Collection<E>, List<E> interfaces.
+LinkedList is the only direct subclass of AbstractSequentialList.
+    Constructor: protected AbstractSequentialList()
+The default constructor, but being protected
+it doesn't allow to create an AbstractSequentialList object.
+    Methods of AbstractSequentialList
+1)add(int index, E element): Inserts the specified element at the specified position in this list (optional operation).
+2) addAll(int index, Collection<? extends E> c): Inserts all of the elements in the specified collection into this
+list at the specified position (optional operation).
+3)get(int index): Returns the element at the specified position in this list.
+4)iterator(): Returns an iterator over the elements in this list (in proper sequence).
+5)listIterator(int index): Returns a list iterator over the elements in this list (in proper sequence).
+6)remove(int index): Removes the element at the specified position in this list (optional operation).
+7)set(int index, E element): Replaces the element at the specified position in this list with the
+specified element.
+    Methods Inherited From class java.util.AbstractCollection
+1) addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to
+this collection (optional operation).
+2)contains(Object o): Returns true if this collection contains the specified element.
+3)containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+4)isEmpty(): Returns true if this collection contains no elements.
+5)remove(Object o): Removes a single instance of the specified element from this collection, if it is present (optional operation).
+6)removeAll(Collection<?> c): Removes all of this collection's elements that are also contained in the specified
+collection (optional operation).
+7) retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified
+collection (optional operation).
+8)toArray(): Returns an array containing all of the elements in this collection.
+9)toArray(T[] a): Returns an array containing all of the elements in this collection; the runtime type of the
+returned array is that of the specified array.
+10)toString(): Returns a string representation of this collection.
+    Methods Inherited From Interface java.util.Collection
+1)parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2)removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that
+satisfy the given predicate.
+3)stream(): Returns a sequential Stream with this collection as its source.
+4)toArray(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection,
+using the provided generator function to allocate the returned array.
+    Methods Inherited From Interface java.lang.Iterable
+1)forEach(Consumer<? super T> action): Performs the given action for each element of the Iterable until all elements
+have been processed or the action throws an exception.
+    Methods Inherited From Interface java.util.List
+1)addAll(Collection<? extends E> c): Appends all of the elements in the specified collection to the end of this list,
+in the order that they are returned by the specified collection's iterator (optional operation).
+2)contains(Object o): Returns true if this list contains the specified element.
+3)containsAll(Collection<?> c): Returns true if this list contains all of the elements of the specified collection.
+4)isEmpty(): Returns true if this list contains no elements.
+5)remove(Object o): Removes the first occurrence of the specified element from this list,
+if it is present (optional operation).
+6)removeAll(Collection<?> c): Removes from this list all of its elements that are contained in the specified
+collection (optional operation).
+7)replaceAll(UnaryOperator<E> operator): Replaces each element of this list with the result of
+applying the operator to that element.
+8)retainAll(Collection<?> c): Retains only the elements in this list that are contained in the specified
+collection (optional operation).
+9)size(): Returns the number of elements in this list.
+10)sort(Comparator<? super E> c): Sorts this list according to the order induced by the specified Comparator.
+11)spliterator(): Creates a Spliterator over the elements in this list.
+12)toArray(): Returns an array containing all of the elements in this list in
+proper sequence (from first to last element).
+13)toArray(T[] a): Returns an array containing all of the elements in this list in proper sequence
+(from first to last element); the runtime type of the returned array is that of the specified array.
+The AbstractSequentialList class in Java is a subclass of AbstractList that provides a skeletal
+implementation of the List interface, specifically for lists that allow sequential access to their elements.
+This means that elements can be accessed in a predictable order, such as first to last.
+By extending the AbstractSequentialList class, you only need to implement the listIterator and size methods
+which provides a basic implementation of a sequential list.
+This can save you a lot of time and code compared to implementing the List interface from scratch.
+    Advantages of using AbstractSequentialList in Java
+1.Reduced code duplication
+2.Consistent behavior
+    Disadvantages of using AbstractSequentialList in Java
+1.Limited functionality
+2.Increased complexity
+
+    Set Interface
+It represents a collection of unique elements, meaning it does not allow duplicate values.
+    Key Features of Set
+1.Set does not allow duplicate elements; each item must be unique
+2.Elements in a Set are not stored or retrieved in any defined order.
+3.LinkedHashSet maintains insertion order, while TreeSet keeps elements sorted.
+4.Most Set implementations allow only a single null element.
+5.Set supports standard methods like add(), remove(), contains(), size() and iterator() from the Collection interface.
+    Creating Set Objects
+Since Set is an interface, objects cannot be created of the typeset.
+We always need a class that extends this list in order to create an object.
+After the introduction of Generics,
+it is possible to restrict the type of object that can be stored in the Set.
+This type-safe set can be defined as:
+    // Obj is the type of the object to be stored in Set
+    Set<Obj> set = new HashSet<Obj> ();
+Set interface provides commonly used operations to manage unique elements in a collection.
+These include:
+1.Adding elements
+2.Accessing elements
+3.Removing elements
+4.Iterating elements
+    Classes that implement the Set interface
+1. HashSet: This is a collection class that implements a hash table-based Set,
+storing elements based on their hashcode without maintaining insertion order and allowing one null element.
+2. EnumSet: This is a specialized Set implementation for use with enum types
+It is part of the Java Collections Framework and offers high performance, often faster than HashSet.
+All elements in an EnumSet must belong to the same enum type, defined at creation time.
+3. LinkedHashSet: This is an ordered version of HashSet that maintains insertion order,
+using a doubly-linked list across all elements.
+4. TreeSet: This is a SortedSet implementation that stores elements in ascending order using a tree structure,
+ensuring natural ordering or a custom comparator.
+    Methods of Set Interface
+1)add(element): Adds element if not already present. Returns true if added.
+2)addAll(collection): Adds all elements from the given collection.
+3)clear(): Removes all elements from the set.
+4))contains(element): Checks if the set contains the specified element.
+5)containsAll(collection): Checks if the set contains all elements from the given collection.
+6)hashCode(): Returns the hash code of the set.
+7)isEmpty(): This method is used to check whether the set is empty or not.
+8)iterator(): This method is used to return the iterator of the set.
+9)remove(element): Removes the specified element from the set.
+10)removeAll(collection): Removes all elements in the given collection from the set.
+11)retainAll(collection): Retains only elements present in the given collection.
+12)size(): Returns the number of elements in the set.
+13)toArray(): This method is used to form an array of the same elements as that of the Set.
