@@ -750,3 +750,78 @@ ensuring natural ordering or a custom comparator.
 11)retainAll(collection): Retains only elements present in the given collection.
 12)size(): Returns the number of elements in the set.
 13)toArray(): This method is used to form an array of the same elements as that of the Set.
+    HashSet
+HashSet in Java implements the Set interface of Collections Framework.
+It is used to store the unique elements and it doesn't maintain any specific order of elements.
+-Can store the Null values.
+-Uses HashMap (implementation of hash table data structure) internally.
+-Also implements Serializable and Cloneable interfaces.
+-HashSet is not thread-safe. So to make it thread-safe, synchronization is needed externally.
+    Capacity of HashSet
+Capacity refers to the number of buckets in the hash table.
+The default capacity of a HashSet is 16, and the load factor is 0.75.
+When the number of elements exceeds the capacity automatically increases (resizes) to maintain performance.
+    new capacity = old capacity × 2
+Load Factor
+Load Factor is a measure that controls how full the HashSet can get before resizing.
+Default Load Factor = 0.75. If the number of elements exceeds the threshold, the capacity is doubled.
+    Threshold = capacity × load factor
+Constructors of HashSet class
+To create a HashSet, we need to create an object of the HashSet class.
+The HashSet class consists of various constructors that allow the possible creation of the HashSet.
+The following are the constructors available in this class.
+1. HashSet()
+Creates a new empty HashSet with default capacity (16) and load factor (0.75).
+syntax
+ HashSet<Type> set = new HashSet<>();
+2. HashSet(int initialCapacity)
+Creates an empty HashSet with the specified initial capacity and default load factor (0.75).
+Syntax:
+HashSet<Type> set = new HashSet<>(int initialCapacity);
+3. HashSet(int initialCapacity, float loadFactor)
+Creates an empty HashSet with the given initial capacity and load factor.
+Syntax:
+HashSet<Type> set = new HashSet<>(int initialCapacity, float loadFactor);
+4. HashSet(Collection<? extends E> c)
+Creates a new HashSet containing the elements of the specified collection (removes duplicates automatically).
+syntax
+HashSet<Type> set = new HashSet<>(Collection);
+    Performing Various Operations on HashSet
+1. Adding Elements in HashSet
+To add an element to the HashSet, we can use the add() method.
+duplicate elements are not allowed
+insertion order is not retained
+2. Removing Elements in HashSet
+The values can be removed from the HashSet using the remove() method.
+3. Iterating through the HashSet
+Iterate through the elements of HashSet using the iterator() method
+    Methods of HashSet
+1)add(E e): Used to add the specified element if it is not present, if it is present then return false.
+2)clear(): Used to remove all the elements from the set.
+3)contains(Object o): Used to return true if an element is present in a set.
+4)remove(Object o): Used to remove the element if it is present in set.
+5)iterator(): Used to return an iterator over the element in the set.
+6)isEmpty(): Used to check whether the set is empty or not.
+Returns true for empty and false for a non-empty condition for set.
+7)size(): Used to return the size of the set.
+8)clone(): Used to create a shallow copy of the set.
+    Differences between HashSet and HashMap.
+HashSet                                                 HashMap
+1)HashSet implements a Set interface.                   HashMap implements a storesMap interface.
+2)HashSet doesn't allow duplicate values.               HashMap stores key-value pairs and doesn’t allow duplicate keys.
+                                                        A duplicate key replaces the old value.
+3)HashSet requires only one object add(Object o).       HashMap requires two objects put(K key, V Value) to add an element to the HashMap object.
+4)HashSet internally uses a HashMap, where each         HashMap does not have any concept of dummy value.
+element added is stored as a key with a dummy value.
+5)HashSet internally uses the HashMap object to         HashMap internally uses hashing to store or add objects
+store or add the objects.
+6)HashSet is slower than HashMap.                       HashMap is faster than HashSet.
+7)HashSet uses the add() method for adding              HashMap uses the put() method for storing data.
+or storing data.
+    Traverse through a HashSet in Java
+Below are few ways with which we can iterate over elements to perform any kind of operations o
+1.Using for-each loop
+2.Using forEach method
+Stream forEach(Consumer action) performs an action for each element of the stream.
+it may traverse the stream to produce a result or a side-effect.
+3.Using Iterators
