@@ -825,3 +825,21 @@ Below are few ways with which we can iterate over elements to perform any kind o
 Stream forEach(Consumer action) performs an action for each element of the stream.
 it may traverse the stream to produce a result or a side-effect.
 3.Using Iterators
+    How to Get Random Elements from Java HashSet?
+which can be done by either of the two ways:
+1.By converting it to an array
+-Firstly convert HashSet into an array and then access the random element from it.
+-Then we will create an object of Random class and will call the nextInt() method of that class
+which will give us any random number less than or equal to the size of the HashSet.
+-And then using an array we will simply print the element present at that index.
+2.Using an Iterator or a for loop
+-In order to get random elements from the HashSet object,
+we need to generate a random number between 0 (inclusive) and the size of the HashSet (exclusive).
+-And then iterate through the set till we reach the element located at the random number position as given below.
+-In this approach, we will get the element at a random index using an Iterator.
+    How to Find the Minimum and Maximum Value from Java HashSet?
+There are a couple of ways to find the maximum and minimum from the HashSet in Java.
+1.Using Collection class
+Using Collections class in Java we can find maximum and minimum
+value with the help of max() and min() method of Collections class.
+2.Using simple iteration
