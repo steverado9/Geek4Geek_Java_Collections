@@ -843,3 +843,14 @@ There are a couple of ways to find the maximum and minimum from the HashSet in J
 Using Collections class in Java we can find maximum and minimum
 value with the help of max() and min() method of Collections class.
 2.Using simple iteration
+    How to sort HashSet in Java
+The elements of the HashSet can be sorted indirectly by converting into List or TreeSet
+    How to convert List to HashSet
+The List interface provides a way to store the ordered collection.
+The ways to convert List to HashSet :
+1.Passing List Object as parameter in HashSet.
+2.Adding each element of List into HashSet using loop.
+3.Using addAll() Method of Set class.
+4.Using stream in Java
+Note: Stream only works in Java8 or versions above it.
+We use stream in java to convert the given list to stream, then stream to set.
