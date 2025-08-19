@@ -854,3 +854,7 @@ The ways to convert List to HashSet :
 4.Using stream in Java
 Note: Stream only works in Java8 or versions above it.
 We use stream in java to convert the given list to stream, then stream to set.
+    How to convert Array to HashSet in Java
+1)Brute Force or Naive Method
+-Create an empty set.
+-Iterate the elements of the array and add one by one to the set.
