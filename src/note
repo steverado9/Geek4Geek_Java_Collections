@@ -69,8 +69,6 @@ and another with a specified index.
 -Using remove() method by indexes(default)
 -Using remove() method by values
 -Using remove() method over iterators
-Note:
-It is not recommended to use ArrayList.remove() when iterating over elements.
 when using iterators,
 -next is used to get the current element
 -while hasNext is used to check if there is a current element
@@ -858,3 +856,44 @@ We use stream in java to convert the given list to stream, then stream to set.
 1)Brute Force or Naive Method
 -Create an empty set.
 -Iterate the elements of the array and add one by one to the set.
+2)Using Java 8 Stream API
+-Get the Array to be converted.
+-Convert the array to Stream.
+-Convert the Stream to Set using Collectors.toSet().
+-Collect the formed set using the collect() method.
+-Return the formed Set.
+
+    AbstractSet
+In Java, the AbstractSet class is part of the Java Collections Framework.
+It provides a Skeleton implementation of the set interface.
+which is a collection that does not allow duplicate elements
+This class is abstract, meaning it cannot be instantiated directly,
+but it can be extended to create a custom set implementation
+-AbstractSet implements the set interface but does not provide a full implementation of all set methods.
+-It provides implementations for methods like size(), isEmpty() and contains()
+-It requires subclasses to implement the iterator()method to define how elements are iterated over.
+    AbstractSet Class Hierarchy
+AbstractSet implements Iterable<E>, Collection<E>, Set<E> interfaces.
+The direct subclasses are
+CopyOnWriteArraySet, EnumSet, HashSet, TreeSet.
+    Declaration of AbstractSet Class
+public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E>
+    Constructor
+protected AbstractSet()
+This Constructor is used to prevent direct instantiation of the AbstractSet class,
+allowing only its subclasses to be instantiated.
+    Performing Various Operations on AbstractSet
+1. Adding elements
+We can use add() method to insert element to a AbstractSet class.
+2. Removing Elements
+We can use various methods like remove(), removeAll(),
+retainAll() and clear() method to remove elements from the AbstractSet.
+3.Iterating Elements
+We can use the iterator() method to iterate over the elements of a AbstractSet.
+    Methods
+1.equals(Object o): Compares the specified object with this set for equality.
+2.hashCode(): Returns the hash code value for this set.
+3.removeAll(Collection<?> c): Removes from this set all of its elements that are contained in the specified collection (optional operation).
+
+
+

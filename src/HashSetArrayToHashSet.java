@@ -6,19 +6,19 @@ class HashSetArrayToHashSet {
     //Function to convert array to set
     static Set<Integer> convert (int[] array) {
         //HashSet initialisation
-        Set<Integer> Set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
         //Iteration using enhanced for loop
         for(int element : array) {
-            Set.add(element);
+            set.add(element);
         }
         //returning the set
-        return Set;
+        return set;
     }
     //Function to print the set
-    static void print(Set<Integer> Set) {
+    static void print(Set<Integer> set) {
         //Implement iterator to the set
-        Iterator<Integer> _iterator = Set.iterator();
+        Iterator<Integer> _iterator = set.iterator();
 
         //Iterate the elements of Set
         while (_iterator.hasNext()) {
@@ -32,9 +32,9 @@ class HashSetArrayToHashSet {
         int array[] = {1, 2, 3, 4, 5, 6};
 
         //calling function to convert the array
-        Set<Integer> Set = convert(array);
+        Set<Integer> set = convert(array);
 
         //print the set
-        print(Set);
+        print(set);
     }
 }
