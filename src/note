@@ -894,6 +894,110 @@ We can use the iterator() method to iterate over the elements of a AbstractSet.
 1.equals(Object o): Compares the specified object with this set for equality.
 2.hashCode(): Returns the hash code value for this set.
 3.removeAll(Collection<?> c): Removes from this set all of its elements that are contained in the specified collection (optional operation).
+    Methods Declared in Class java.util.AbstractCollection
+1.add(E e): Ensures that this collection contains the specified element.
+2.addAll(Collection<? extends E> c):Adds all of the elements in the specified collection to this collection.
+3.clear(): Removes all of the elements from this collection.
+4.contains(Object o): Returns true if this collection contains the specified element.
+5.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+6.isEmpty(): Returns true if this collection contains no elements.
+7.iterator(): Returns an iterator over the elements contained in this collection.
+8.remove(Object o): Removes a single instance of the specified element from this collection, if it is present.
+9.retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection.
+10.toArray(): Returns an array containing all of the elements in this collection.
+11.toArray(T[] a): Returns an array containing all of the elements in this collection.
+12.toString(): Returns a string representation of this collection.
+    Methods Declared in Interface java.util.Collection
+1.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2.removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+3.stream(): Returns a sequential Stream with this collection as its source.
+4.toArray(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection,
+using the provided generator function to allocate the returned array.
+    Methods Declared in interface java.lang.Iterable
+1.forEach(Consumer<? super T> action): Performs the given action for each element of the Iterable until all elements
+have been processed or the action throws an exception.
+    Methods Declared in interface java.util.Set
+1.add(E e)
+2.addAll(Collection<? extends E> c)
+3.clear()
+4.contains(Object o)
+5.containsAll(Collection<?> c)
+6.isEmpty()
+7.iterator()
+8.remove(Object o)
+9.retainAll(Collection<?> c)
+10.size()
+11.spliterator()
+12.toArray()
+13.toArray(T[] a)
+    Characteristics of AbstractSet
+-Implements the Set interface
+-Implements some set methods
+-Supports iterator
+-Does not implement all set methods
+-Provides default implementations
+-Supports null elements
+-Unordered
+-Thread-unsafe
 
-
-
+    CopyOnWriteArraySet
+This is the part of the java.util.concurrent package and
+used to handle thread-safe operations in multi-threaded environments.
+-CopyOnWriteArraySet uses a CopyOnWriteArrayList internally.
+-Iterators can only perform read operations.
+-CopyOnWriteArraySet is Ideal for small sets where read operations are much more frequent than modifications.
+-Multiple threads can perform updates simultaneously,
+only one thread can iterate the set at a time without encountering ConcurrentModificationException.
+-CopyOnWriteArraySet is a class that implements the Set interface.
+    Concurrency
+Concurrency in Java refers to the ability to execute multiple tasks or parts of a program seemingly simultaneously
+    Constructors
+1.CopyOnWriteArraySet(): Creates an empty set.
+2.CopyOnWriteArraySet(Collection c): Creates a set containing all of the elements of the specified collection.
+    Methods
+1.add(E e): Adds the specified element to this set if it is not already present.
+2.addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this set if they’re not already present.
+3.clear(): Removes all of the elements from this set.
+4.contains(Object o): Returns true if this set contains the specified element.
+5.containsAll(Collection<?> c): Returns true if this set contains all of the elements of the specified collection.
+6.equals(Object o):Compares the specified object with this set for equality.
+7.forEach(Consumer<? super E> action): Performs the given action for each element of the Iterable until all elements
+have been processed or the action throws an exception.
+8.isEmpty(): Returns true if this set contains no elements.
+9.iterator(): Returns an iterator over the elements contained in this set in the order in which these elements were added.
+10.remove(Object o): Removes the specified element from this set if it is present.
+11.removeAll(Collection<?> c): Removes from this set all of its elements that are contained in the specified collection.
+12.removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+13.retainAll(Collection<?> c): Retains only the elements in this set that are contained in the specified collection.
+14.size(): Returns the number of elements in this set.
+15.spliterator(): Returns a Spliterator over the elements in this set in the order in which these elements were added.
+16.toArray(): Returns an array containing all of the elements in this set.
+17.toArray(T[] a): Returns an array containing all of the elements in this set;
+the runtime type of the returned array is that of the specified array.
+    HashSet                                                                 CopyOnWriteArraySet
+1.It belongs to java.util package                                          It belongs to java.util.concurrent package
+2.HashSet is not synchronized, meaning it’s not thread-safe.               CopyOnWriteArraySet is synchronized and thread-safe.
+    ConcurrentHashMap in Java
+In Java, the ConcurrentHashMap is a thread-safe implementation of the Map interface.
+It allows multiple threads to read and write data simultaneously
+-The default concurrency level of ConcurrentHashMap is 16
+    Constructors
+-Concurrency-Level: It is the number of threads concurrently updating the map.
+-Load-Factor: It’s a threshold, used to control resizing.
+-Initial Capacity: Accommodation of a certain number of elements initially provided by the implementation.
+    Constructor
+-ConcurrentHashMap(): This constructor creates a new, empty map with a default initial capacity (16),
+load factor (0.75) and concurrencyLevel (16).
+-ConcurrentHashMap(int initialCapacity): This constructor creates a new, empty map with the specified initial capacity,
+and with default load factor (0.75) and concurrencyLevel (16).
+-ConcurrentHashMap(int initialCapacity, float loadFactor): This constructor creates a new,
+empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16)
+-ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel):
+This constructor creates a new, empty map with the specified initial capacity, load factor, and concurrency level.
+-ConcurrentHashMap(Map m): This constructor creates a new map with the same mappings as the given map.
+    Performing Various Operations on ConcurrentHashMap
+1.Adding Elements: We can use put() or putAll() to insert element to a ConcurrentHashMap.
+2.Removing Elements: We can use the remove() method to remove elements from the ConcurrentHashMap.
+To clear the entire map, we can use the clear().
+3.Accessing Elements: We can use the  get() method to access the elements of the ConcurrentHashMap.
+4.Iterating Elements: We can use the Iterator interface to traverse over the elements of ConcurrentHashMap.
