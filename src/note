@@ -1001,3 +1001,66 @@ This constructor creates a new, empty map with the specified initial capacity, l
 To clear the entire map, we can use the clear().
 3.Accessing Elements: We can use the  get() method to access the elements of the ConcurrentHashMap.
 4.Iterating Elements: We can use the Iterator interface to traverse over the elements of ConcurrentHashMap.
+Note:
+If a thread-safe highly-concurrent implementation is desired,
+then it is recommended to use ConcurrentHashMap in place of Hashtable.
+    LinkedHashSet
+This is very similar to a HashSet.
+It combines the functionality of a HashSet with a LinkedList to maintain the insertion order of elements.
+-Stores unique elements only.
+-Maintains insertion order.
+-Provides faster iteration compared to HashSet.
+-Allows null elements.
+LinkedHashSet maintains insertion order using a doubly-linked list.
+Unlike HashSet, it allows predictable iteration in the order elements were added.
+    Constructors of LinkedHashSet
+1.LinkedHashSet()
+This constructor is used to create an empty LinkedHashSet
+with the default capacity i.e. 16 and load factor 0.75.
+2.LinkedHashSet(Collection C)
+Used in initializing the HashSet with the elements of the collection C.
+3. LinkedHashSet(int size):
+Used to initialize the size of the LinkedHashSet with the integer mentioned in the parameter.
+4. LinkedHashSet(int capacity, float fillRatio)
+    Performing Various Operations on LinkedHashSet
+1.Adding Elements in LinkedHashSet
+In order to add an element to the LinkedHashSet, we can use the add()
+2.Removing Elements in LinkedHashSet
+The values can be removed from the LinkedHashSet using the remove() method.
+3.Iterating through the LinkedHashSet
+Iterate through the elements of  LinkedHashSet using the iterator() method.
+    Advantages of LinkedHashSet
+-It maintains insertion order.
+-It allows quick insertion, deletion and lookup of elements.
+-It is useful for caching applications where insertion order is important.
+    Disadvantages of LinkedHashSet
+-It takes higher memory as compared to HashSet due to the linked list for maintaining insertion order.
+-This is slightly slower operations compared to HashSet because of the linked structure.
+    Methods of LinkedHashSet
+1.add(E e): Adds an element if it’s not already present.
+2.addAll(Collection c): Adds all elements from the specified collection.
+3.clear(): Removes all elements from the set.
+4.contains(Object o): Checks if the set contains the specified element.
+5.containsAll(Collection c): Checks if the set contains all elements from the given collection.
+6.remove(Object o): Removes the specified element from the set.
+7.removeAll(Collection c): Removes all matching elements from the set.
+8.retainAll(Collection c): Keeps only elements present in the given collection.
+9.isEmpty(): Checks if the set is empty.
+10.size(): Returns the number of elements in the set.
+11.iterator(): Returns an iterator over the elements.
+12.toArray(): Returns an array containing all elements.
+13.toArray(T[] a): Returns an array of the specified type containing all elements.
+14.hashCode(): Returns hash code of the set.
+15.equals(Object o): Compares this set with another set.
+16.clone(): Creates a shallow copy of the set.
+17.toString(): Returns a string representation of the set.
+18.spliterator(): Returns a Spliterator for this set.
+19.stream(): Returns a sequential stream of elements.
+20.parallelStream(): Returns a parallel stream of elements.
+21.removeIf(Predicate filter): Removes elements that match a condition.
+22.forEach(Consumer action): Performs an action on each element.
+    Accessing LinkedHashSet elements by Index
+Methods:
+A naive approach using the iteration count method
+Converting LinkedHashSet to Array
+Converting LinkedHashSet to List
