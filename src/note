@@ -1061,6 +1061,109 @@ Iterate through the elements of  LinkedHashSet using the iterator() method.
 22.forEach(Consumer action): Performs an action on each element.
     Accessing LinkedHashSet elements by Index
 Methods:
-A naive approach using the iteration count method
-Converting LinkedHashSet to Array
-Converting LinkedHashSet to List
+1.A naive approach using the iteration count method
+-Use iterator to traverse to our LinkedHashSet
+-Initiate out index pointer currentindex = 0
+-Start the iteration using a while loop and if the current
+index becomes equal to the given index print the element.
+2.Converting LinkedHashSet to Array
+-Convert given LinkedHashSet to Array using toArray() method.
+-Accessing the element on the given index in the array.
+3.Converting LinkedHashSet to List
+-Convert our LinkedHashSet to List like ArrayList.
+-Using get() method to get an element in a given index.
+    Removing elements from a LinkedHashSet
+The remove(Object O) method is used to remove a particular element from a LinkedHashSet
+This method returns True if the specified element is present in the LinkedHashSet otherwise it returns False.
+    Union of Sets in LinkedHashSets
+Use the addAll() method to merge two LinkedHashSet objects or
+append elements of one LinkedHashSet object to another LinkedHashSet object
+-The addAll method adds all the elements of the specified collection to this set object.
+    Difference Between LinkedHashSet, TreeSet, and HashSet
+-when to use
+HashSet
+If you don’t want to maintain insertion order but want to store unique objects
+LinkedHashSet
+If you want to maintain the insertion order of elements then you can use LinkedHashSet
+TreeSet
+If you want to sort the elements according to some Comparator then use TreeSet
+
+    EnumSet
+EnumSet is a specialized set implementation for use with enum types
+-It extends the AbstractSet class and implements the Set Interface in Java.
+-The EnumSet class is a member of the Java Collections Framework and is not synchronized.
+-All of the elements in an EnumSet must come from a single enumeration type
+-It does not allow null Objects
+-It uses a fail-safe iterator,
+    Declaration of EnumSet
+In Java, the declaration of EnumSet can be done as
+EnumSet<Type> variableName = EnumSet.of(Element1, Element2, Element3);
+    Methods
+1.allOf(Class<E> elementType): Creates an enum set containing all of the elements in the specified element type.
+2.clone(): Returns a copy of this set.
+3.complementOf(EnumSet<E> s): Creates an enum set with the same element type as the specified enum set.
+4.copyOf(Collection<E> c): Creates an enum set initialized from the specified collection.
+5.copyOf(EnumSet<E> s): Creates an enum set with the same element type as the specified enum set.
+6.noneOf(Class<E> elementType): Creates an empty enum set with the specified element type.
+7.of(E e): Creates an enum set initially containing the specified element.
+8.of(E e1, E e2): Creates an enum set initially containing the specified elements.
+9.of(E first, E… rest): Creates an enum set initially containing the specified elements.
+10.range(E from, E to): Creates an enum set initially containing all of the elements in the range
+defined by the two specified endpoints.
+    Creating a EnumSet
+EnumSet is an abstract class, we can not directly create an instance of it.
+EnumSet is an abstract class, we can not directly create an instance of it.
+1.RegularEnumSet:
+It uses a single long object to store the elements of the EnumSet
+-RegularEnumSet can store up to 64 enum values.
+2.JumboEnumSet
+It uses an array of long values to store the elements of the EnumSet.
+The key difference is that JumboEnumSet allows storing more than 63 values
+by using multiple long elements to represent a larger set of enum constants.
+    Performing Various Operations on EnumSet
+1.Adding Elements
+We can use add() and addAll() to insert elements to an EnumSet.
+2. Accessing Elements
+We can access the EnumSet using the iterator() method.
+3. Removing Elements
+We can use the remove() and removeAll() to remove elements from an EnumSet.
+    Methods Declared in Class java.util.AbstractSet
+1.equals(Object): Compares the specified object with this set for equality.
+2.hashCode(): Returns the hash code value for this set.
+3.removeAll(Collection<?> c): Removes from this set all of its elements that are contained in the specified collection.
+    Methods Declared in Interface java.util.Collection
+1.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2.removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+3.stream(): Returns a sequential Stream with this collection as its source.
+4.toArray(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection,
+using the provided generator function to allocate the returned array.
+    Methods Declared in Interface java.lang.Iterable
+1.forEach(Consumer<? super T> action): Performs the given action for each element of the Iterable until
+all elements have been processed or the action throws an exception.
+    Methods Declared in Interface java.util.Set
+1.add(E e): Adds the specified element to this set if it is not already present (optional operation).
+2.addAll(Collection<? extends E> c): Adds the specified element to this set if it is not already present.
+3.clear(): Removes all of the elements from this set.
+4.contains(Object o): Returns true if this set contains the specified element.
+5.containsAll(Collection<?> c): Returns true if this set contains all of the elements of the specified collection.
+6.isEmpty(): Returns true if this set contains no elements.
+7.iterator(): Returns an iterator over the elements in this set.
+8.remove(Object o): Removes the specified element from this set if it is present.
+9.retainAll(Collection<?> c): Retains only the elements in this set that are contained in the specified collection.
+10.size(): Returns the number of elements in this set.
+11.spliterator(): Creates a Spliterator over the elements in this set.
+12.toArray(): Returns an array containing all of the elements in this set.
+    Methods Declared in Class java.util.AbstractCollection
+1.add(E e): Ensures that this collection contains the specified element.
+2.addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this collection
+3.clear(): Removes all of the elements from this collection
+4.contains(Object o): Returns true if this collection contains the specified element.
+5.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+6.isEmpty(): Returns true if this collection contains no elements.
+7.iterator(): Returns an iterator over the elements contained in this collection.
+8.remove(Object o); Removes a single instance of the specified element from this collection, if it is present.
+9.retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection .
+10.toArray(): Returns an array containing all of the elements in this collection.
+11.toArray(T[] a): Returns an array containing all of the elements in this collection; the runtime type of the
+returned array is that of the specified array.
+12. toString(): Returns a string representation of this collection.
