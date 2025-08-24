@@ -1167,3 +1167,104 @@ all elements have been processed or the action throws an exception.
 11.toArray(T[] a): Returns an array containing all of the elements in this collection; the runtime type of the
 returned array is that of the specified array.
 12. toString(): Returns a string representation of this collection.
+
+    SortedSet Interface
+This interface contains the methods inherited from the Set interface
+and adds a feature that stores all the elements in this interface to be stored in a sorted manner.
+1.TreeSet
+A TreeSet is a collection class that stores unique elements in a sorted order.
+In this set The ordering of the elements is maintained by a set using their natural ordering.
+The class which implements the navigable set is a TreeSet which is an implementation of a self-balancing tree.
+    Key Features of TreeSet
+-duplicate insertions are ignored.
+-TreeSet does not allow null values.
+-Implements the NavigableSet interface and provides navigation methods like higher(), lower(), ceiling() and floor().
+-Not thread-safe
+    Constructors of TreeSet
+In order to create a TreeSet, we need to create an object of the TreeSet class.
+The following are the constructors available in this class
+1.TreeSet()
+Creates an empty TreeSet that sorts elements in their natural order.
+    TreeSet ts = new TreeSet();
+2.TreeSet(Comparator)
+This constructor is used to build an empty TreeSet object in which elements will need an external
+specification of the sorting order.
+    TreeSet ts = new TreeSet(Comparator comp);
+3.TreeSet(Collection)
+This constructor is used to build a TreeSet object containing all the elements from the given collection
+in which elements will get stored in default natural sorting order
+    TreeSet t = new TreeSet(Collection col);
+4.TreeSet(SortedSet)
+Creates a TreeSet containing the same elements and order as the specified SortedSet.
+    TreeSet t = new TreeSet(SortedSet s);
+    Various Operations over TreeSet
+1. Adding Elements
+To add elements to a TreeSet, use the add() method.
+2. Accessing the Elements
+After adding the elements, if we wish to access the elements,
+we can use inbuilt methods like contains(), first(), last(), etc.
+3. Removing the Values
+The values can be removed from the TreeSet using the remove() method.
+4.Iterating the TreeSet
+5.StringBuffer
+StringBuffer does NOT implement the Comparable interface.
+Therefore, you must provide a custom Comparator to use StringBuffer objects in a TreeSet.
+  Methods of TreeSet
+1.add(Object o): Adds element in sorted order; ignores duplicates.
+2.addAll(Collection c): Adds all elements from a collection; ignores duplicates.
+3.ceiling?(E e): This method returns the least element in this set greater than or equal to
+the given element, or null if there is no such element.
+4.clear(): This method will remove all the elements.
+5.clone(): The method is used to return a shallow copy of the set, which is just a simple copied set.
+6.Comparator(): This method will return the Comparator used to sort elements in TreeSet.
+7.contains(Object o): This method will return true if a given element is present in TreeSet else it will return false.
+8.descendingIterator?(): This method returns an iterator over the elements in this set in descending order.
+9.descendingSet?(): This method returns a reverse order view of the elements contained in this set.
+10.first(): This method will return the first element in TreeSet if TreeSet is not null else it will throw NoSuchElementException.
+11.floor?(E e): This method returns the greatest element in this set less than or equal to the given element,
+or null if there is no such element.
+12.headSet(Object toElement): This method will return elements of TreeSet which are less than the specified element.
+13.higher?(E e): This method returns the least element in this set strictly greater than the given element,
+or null if there is no such element.
+14.isEmpty(): This method is used to return true if this set contains no elements or is empty and false for the opposite case.
+15.iterator(): Returns an iterator for iterating over the elements of the set.
+16.last(): This method will return the last element in TreeSet if TreeSet is not null else it will throw NoSuchElementException.
+17.lower?(E e): This method returns the greatest element in this set strictly less than the given element,
+or null if there is no such element.
+18.pollFirst?(): This method retrieves and removes the first (lowest) element, or returns null if this set is empty.
+19.pollLast?(): This method retrieves and removes the last (highest) element, or returns null if this set is empty.
+20.remove(Object o): This method is used to return a specific element from the set.
+21.size(): This method is used to return the size of the set or the number of elements present in the set.
+22.spliterator(): This method creates a late-binding and fail-fast Spliterator over the elements in this set.
+23.subSet(Object fromElement, Object toElement): This method will return elements ranging from fromElement to toElement.
+24.tailSet(Object fromElement)	This method will return elements of TreeSet which are greater than or equal to the specified element.
+    Difference Between EnumSet and TreeSet in Java
+-EnumSet is a specialized implementation of the Set interface for enumeration types.
+-TreeSet is a class that implementation the SortedSet interface in Java.
+    How to Create a TreeSet with a List in Java?
+TreeSet can be created from List by passing the List to the TreeSet constructor in Java
+we can traverse complete List and adding each element of the List to the TreeSet.
+Approach 1:
+-Create a List object.
+-Enter multiple inputs in the List.
+-Create a TreeSet Object.
+-Initialize object with a constructor and pass List object in it.
+-Print the Treeset.
+Approach 2:
+-Create a List object.
+-Enter multiple inputs in the List.
+-Create a TreeSet Object.
+-Start List traversal and add that element in the TreeSet.
+-After complete traversal, Print the Treeset.
+Approach 3
+-Initialize and Declare the List object with inputs.
+-Now, Create the TreeSet object.
+-Collections.addAll() is used to add all elements from one object to another object.
+-Print the TreeSet.
+    How to Remove Duplicate Entries from an Array using TreeSet
+Approach: add() method of Set
+    Getting Least Value Element From a Set by Using Sorting Logic on TreeSet in Java
+Approach
+-Use comparators to order the object of a user-defined class.
+-Implementing the sorting functionality that overrides the compare() method to sort the TreeSet by value.
+-After sorting, the first object of the TreeSet will be the least value element.
