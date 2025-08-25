@@ -1171,7 +1171,7 @@ returned array is that of the specified array.
     SortedSet Interface
 This interface contains the methods inherited from the Set interface
 and adds a feature that stores all the elements in this interface to be stored in a sorted manner.
-1.TreeSet
+    1.TreeSet
 A TreeSet is a collection class that stores unique elements in a sorted order.
 In this set The ordering of the elements is maintained by a set using their natural ordering.
 The class which implements the navigable set is a TreeSet which is an implementation of a self-balancing tree.
@@ -1268,3 +1268,87 @@ Approach
 -Use comparators to order the object of a user-defined class.
 -Implementing the sorting functionality that overrides the compare() method to sort the TreeSet by value.
 -After sorting, the first object of the TreeSet will be the least value element.
+
+    2.NavigableSet
+The NavigableSet is a subtype of the SortedSet interface.
+It provides methods to navigate through the elements in the set.
+The classes that implement the NavigableSet interface are TreeSet and ConcurrentSkipListSet.
+-It allows you to navigate in both directions ascending and descending order
+-The most common implementation of NavigableSet is TreeSet.
+    Declaration of NavigableSet
+NavigableSet<Type> setName;
+    Creating NavigableSet Objects
+We can not create a NavigableSet directly since it's an interface.
+Instead we use a class like TreeSet that implements it.
+NavigableSet<Obj> set = new TreeSet<Obj>();
+    Performing Various Operations on NavigableSet
+1. Adding Elements
+We can use the add() method to insert elements to the NavigableSet.
+2. Accessing Elements
+We can use inbuilt methods like contains(), first(), last(), etc.
+3. Removing Elements
+The values can be removed from the NavigableSet using the remove(), pollFirst(), pollLast().
+4. Iterating Elements
+There are various ways to iterate through the NavigableSet.
+The most famous one is to use the enhanced for loop.
+    Methods
+1.ceiling(E e): Returns the least element in this set greater than or equal to the given element,
+or null if there is no such element.
+2.descendingIterator(): Returns an iterator over the elements in this set, in descending order.
+3.descendingSet(): Returns a reverse order view of the elements contained in this set.
+4.floor(E e): Returns the greatest element in this set less than or equal to the given element,
+or null if there is no such element.
+5.headSet(E toElement): Returns a view of the portion of this set whose elements are strictly less than toElement.
+6.headSet(E toElement, boolean inclusive): Returns a view of the portion of this set whose elements are less than
+(or equal to, if inclusive is true) toElement.
+7.higher(E e): Returns the least element in this set strictly greater than the given element,
+or null if there is no such element.
+8.iterator(): Returns an iterator over the elements in this set, in ascending order.
+9.lower(E e): Returns the greatest element in this set strictly less than the given element,
+or null if there is no such element.
+10.pollFirst(): Retrieves and removes the first (lowest) element, or returns null if this set is empty.
+11.pollLast(): Retrieves and removes the last (highest) element, or returns null if this set is empty.
+12.subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive): Returns a view of the portion of
+this set whose elements range from fromElement to toElement.
+13.subSet(E fromElement, E toElement): Returns a view of the portion of this set whose elements range from fromElement,
+inclusive, to toElement, exclusive.
+14.tailSet(E fromElement): Returns a view of the portion of this set whose elements
+are greater than or equal to fromElement.
+15.tailSet(E fromElement, boolean inclusive): Returns a view of the portion of this set whose elements are
+greater than (or equal to, if inclusive is true) fromElement.
+    Methods Inherited from Interface java.util.SortedSet
+1.comparator(): This method returns the comparator used to order the elements in this set,
+or null if this set uses the natural ordering of its elements.
+2.first(): This method returns the first(lowest) element present in this set.
+3.last(): This method returns the last(highest) element present in the set.
+4.spliterator(): Creates a Spliterator over the elements in this sorted set.
+    Methods Inherited from Interface java.util.Set
+1.add(element): This method is used to add a specific element to the set.
+2.addAll(collection): This method is used to append all of the elements from the
+mentioned collection to the existing set.
+3.clear(): This method is used to remove all the elements from the set but not delete the set.
+4.contains(element): This method is used to check whether a specific element is present in the Set or not.
+5.containsAll(collection): This method is used to check whether the set contains all the elements
+present in the given collection or not.
+6.equals(): Compares the specified object with this set for equality.
+7.hashCode(): This method is used to get the hashCode value for this instance of the Set.
+8.isEmpty(): This method is used to check if a NavigableSet is empty or not.
+9.remove(element): This method is used to remove the given element from the set.
+10.removeAll(collection): This method is used to remove all the elements from the collection
+which are present in the set.
+11.retainAll(collection): This method is used to retain all the elements from the set which are
+mentioned in the given collection.
+12.size(): This method is used to get the size of the set.
+13.toArray(): This method is used to form an array of the same elements as that of the Set.
+14.toArray(T[] a): Returns an array containing all of the elements in this set.
+    Methods Declared in Interface java.util.Collection
+1.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2.removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+3.stream(): Returns a sequential Stream with this collection as its source.
+4.toArray?(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection, using the
+ provided generator function to allocate the returned array.
+    Methods Declared in Interface java.lang.Iterable
+1)forEach(Consumer<? super T> action): Performs the given action for each element of the Iterable until all elements
+have been processed or the action throws an exception.
+
+    3. ConcurrentSkipListSet
