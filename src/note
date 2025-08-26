@@ -1352,3 +1352,129 @@ mentioned in the given collection.
 have been processed or the action throws an exception.
 
     3. ConcurrentSkipListSet
+The ConcurrentSkipListSet is the part of the java.util.concurrent package.
+and it provides a scalable, thread-safe alternative to TreeSet.
+It is a sorted set that lets multiple threads safely access and modify the set at the same time without causing issues.
+-It is thread-safe.
+-Elements are in sorted order, and it supports navigable set operations (e.g., floor, ceiling, higher, lower).
+    Declaration of ConcurrentSkipListSet
+ConcurrentSkipListSet<Type> set = new ConcurrentSkipListSet<>();
+    Constructors
+1.ConcurrentSkipListSet(): It is used to construct an empty set.
+2.ConcurrentSkipListSet(Collection<E> c): It is used to construct a set with the elements of the
+Collection passed as the parameter.
+3.ConcurrentSkipListSet(Comparator<E> comparator)
+It is sed to construct a new, empty set that orders its elements according to the specified comparator.
+4.ConcurrentSkipListSet(SortedSet<E> s)
+It is used to construct a new set containing the same elements and using the same ordering as the specified sorted set.
+    methods
+1.add(E e): Adds the specified element to this set if it is not already present.
+2.ceiling(E e): Returns the least element in this set greater than or equal to the given element,
+or null if there is no such element.
+3.clear(): Removes all of the elements from this set.
+4.clone(): Returns a shallow copy of this ConcurrentSkipListSet instance.
+5.comparator(): Returns the comparator used to order the elements in this set,
+or null if this set uses the natural ordering of its elements.
+6.contains(Object o): Returns true if this set contains the specified element.
+7.descendingIterator(): Returns an iterator over the elements in this set in descending order.
+8.descendingSet(): Returns a reverse order view of the elements contained in this set.
+9.equals(Object o): Compares the specified object with this set for equality.
+10.first(): Returns the first (lowest) element currently in this set.
+11.floor(E e): Returns the greatest element in this set less than or equal to the given element,
+or null if there is no such element.
+12.headSet(E toElement): Returns a view of the portion of this set whose elements are strictly less than toElement.
+13.headSet(E toElement, boolean inclusive):
+Returns a view of the portion of this set whose elements are less than (or equal to, if inclusive is true) toElement.
+14.higher(E e): Returns the least element in this set strictly greater than the given element, or null if there is no such element.
+15.isEmpty(): Returns an iterator over the elements in this set in ascending order.
+16.last(): Returns the last (highest) element currently in this set.
+17.lower(E e): Returns the greatest element in this set strictly less than the given element, or null if there is no such element.
+18.pollFirst(): Retrieves and removes the first (lowest) element, or returns null if this set is empty.
+19.pollLast(): Retrieves and removes the last (highest) element, or returns null if this set is empty.
+20.remove(Object o): Removes the specified element from this set if it is present.
+21.removeAll(Collection<?> c): Removes from this set all of its elements that are contained in the specified collection.
+22.size(): Returns the number of elements in this set.
+23.spliterator(): Returns a Spliterator over the elements in this set.
+24.subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)
+Returns a view of the portion of this set whose elements range from fromElement to toElement.
+25.subSet(E fromElement, E toElement): Returns a view of the portion of this set whose elements range from fromElement,
+inclusive, to toElement, exclusive.
+26.tailSet(E fromElement): Returns a view of the portion of this set whose elements are greater than or equal to fromElement.
+    Method Inherited from Class java.util.AbstractSet
+1.hashCode(): Returns the hash code value for this set.
+    Methods Inherited from Class java.util.AbstractCollection
+1.addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this collection.
+2.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+3.retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection.
+4.toArray(): Returns an array containing all of the elements in this collection.
+5.toArray(T[] a): Returns an array containing all of the elements in this collection.
+6.toString(): Returns a string representation of this collection.
+    Methods Inherited from Interface java.util.Set
+1.addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this set if they're not already present.
+2.containsAll(Collection<?> c): Returns true if this set contains all of the elements of the specified collection.
+3.hashCode(): Returns the hash code value for this set.
+4.retainAll(Collection<?> c): Retains only the elements in this set that are contained in the specified collection.
+5.toArray(): Returns an array containing all of the elements in this set.
+6.toArray(T[] a): Returns an array containing all of the elements in this set.
+    Methods Inherited from Interface java.util.Collection
+1.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+2.removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+3.stream(): Returns a sequential Stream with this collection as its source.
+    Method Inherited from Interface java.lang.Iterable
+1.forEach(Consumer<? super T> action):
+Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.
+
+    Map Interface
+The Map Interface is part of the java.util package and
+represents a collection of key-value pairs.
+-Keys are unique (no duplicates allowed).
+-Each key maps to exactly one value.
+-Values can be duplicates.
+- Use ConcurrentHashMap for thread-safe operations
+    The Map data structure in Java is implemented by two interfaces:
+1.Map Interface
+2.SortedMap Interface
+    The three primary classes that implement these interfaces are
+1.HashMap
+2.TreeMap
+3.LinkedHashMap
+    Creating Map Objects
+Since Map is an interface, objects cannot be created of the type map.
+We always need a class that implements this map interface in order to create an object.
+    Operations on Map using HashMap
+1.Adding Elements
+To add an element to the map, we can use the put() method.
+The insertion order is not retained in the hashmap.
+2.Changing Element
+It can be done by adding the element with the put() method.
+The elements in the map are indexed using the keys,
+the value of the key can be changed by simply inserting the updated value for the key for which we want to change.
+3.Removing Elements
+To remove an element from the Map, we can use the remove() method.
+4.Iterating through the Map
+The most famous way is to use a for-each loop and get the keys.
+The value of the key is found by using the getValue() method.
+    Methods in Java Map Interface
+1.clear(): This method is used in Java Map Interface to clear and remove all of the elements or mappings from a
+specified Map collection.
+2.containsKey(Object): Checks if a key exists in the map.
+3.containsValue(Object): Checks if a value exists in the map.
+4.entrySet(): Returns a set view of the map’s key-value pairs.
+5.equals(Object): Compares two maps for equality.
+6.get(Object): Returns the value for the given key, or null if not found.
+7.hashCode(): This method is used in Map Interface to generate a hashCode for the given map containing keys and values.
+8.isEmpty(): This method is used to check if a map is having any entry for key and value pairs. If no mapping exists,
+then this returns true.
+9.keySet(): Returns a set view of the keys in the map.
+10.put(Object, Object): This method is used in Java Map Interface to associate the specified value with
+the specified key in this map.
+11.putAll(Map): This method is used in Map Interface in Java to copy all of the mappings from the specified map to this map.
+12.remove(Object): This method is used in Map Interface to remove the mapping for a key from this map if it is present in the map.
+13.size(): This method is used to return the number of key/value pairs available in the map.
+14.values(): Returns a collection view of the map’s values.
+15.getOrDefault(Object key, V defaultValue): Returns the value to which the specified key is mapped,
+or defaultValue if this map contains no mapping for the key.
+16.merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associate it with the given non-null value.
+17.putIfAbsent(K key, V value): Adds a mapping only if the key is not already mapped.
+
