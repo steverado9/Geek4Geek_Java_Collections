@@ -1478,3 +1478,135 @@ or defaultValue if this map contains no mapping for the key.
 If the specified key is not already associated with a value or is associated with null, associate it with the given non-null value.
 17.putIfAbsent(K key, V value): Adds a mapping only if the key is not already mapped.
 
+    Hashtable
+Hashtable class, introduced as part of the Java Collections framework.
+implements a hash table that maps keys to values.
+The java.util.Hashtable class is a class in Java that provides a key-value data structure, similar to the Map interface.
+-It is similar to HashMap, but is synchronized.
+-Hashtable stores key/value pair in hash table.
+-In Hashtable we specify an object that is used as a key,
+and the value we want to associate to that key.
+The key is then hashed, and the resulting hash code is used as the index at which the value is stored within the table.
+-The initial default capacity of Hashtable class is 11 whereas loadFactor is 0.75.
+- Hashtable provides not fail-fast Enumeration.
+In general, it's recommended to use the Map interface or one of its implementations
+such as HashMap or ConcurrentHashMap) instead of the Hashtable class.
+    HashTable Constructors
+In order to create a Hashtable, we need to import it from java.util.Hashtable.
+There are various ways in which we can create a Hashtable.
+1.Hashtable()
+This creates an empty hashtable with the default load factor of 0.75 and an initial capacity is 11.
+2.Hashtable(int initialCapacity):
+This creates a hash table that has an initial size specified by initialCapacity and the default load factor is 0.75.
+3.Hashtable(int size, float fillRatio)
+This version creates a hash table that has an initial size specified by size and fill ratio specified by fillRatio.
+-fill ratio: Basically,
+it determines how full a hash table can be before it is resized upward and its Value lies between 0.0 to 1.0.
+4. Hashtable(Map<? extends K,? extends V> m)
+This creates a hash table that is initialized with the elements in m.
+    Performing Various Operations on Hashtable
+1. Adding Elements
+In order to add an element to the hashtable, we can use the put() method.
+2. Changing Elements
+After adding the elements if we wish to change the element,
+it can be done by again adding the element with the put() method.
+3. Removing Element
+In order to remove an element from the Map, we can use the remove() method.
+This method takes the key value and removes the mapping for a key from this map if it is present in the map.
+    Methods of Hashtable
+K – The type of the keys in the map.
+V – The type of values mapped in the map.
+1.clear(): Clears this hashtable so that it contains no keys.
+2.clone(): Creates a shallow copy of this hashtable.
+3.compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping).
+4.computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)
+If the specified key is not already associated with a value (or is mapped to null),
+attempts to compute its value using the given mapping function and enters it into this map unless null.
+5.computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+6.contains(Object value): Tests if some key maps into the specified value in this hashtable.
+7.containsKey(Object key): Tests if the specified object is a key in this hashtable.
+8.containsValue(Object value): Returns true if this hashtable maps one or more keys to this value.
+9.elements(): Returns an enumeration of the values in this hashtable.
+10.entrySet(): Returns a Set view of the mappings contained in this map.
+11.equals(Object o): Compares the specified Object with this Map for equality, as per the definition in the Map interface.
+12.get(Object key): Returns the value to which the specified key is mapped,
+or null if this map contains no mapping for the key.
+13.hashCode(): Returns the hash code value for this Map as per the definition in the Map interface.
+14.isEmpty(): Tests if this hashtable maps no keys to values.
+15.keys(): Returns an enumeration of the keys in this hashtable.
+16.keySet(): Returns a Set view of the keys contained in this map.
+17.merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+18.put(K key, V value): Maps the specified key to the specified value in this hashtable.
+19.putAll(Map<? extends K,? extends V> t)
+Copies all of the mappings from the specified map to this hashtable.
+20.rehash(): Increases the capacity of and internally reorganizes this hashtable, in order to accommodate
+and access its entries more efficiently.
+21.remove(Object key): Removes the key (and its corresponding value) from this hashtable.
+22.size(): Returns the number of keys in this hashtable.
+23.toString(): Returns a string representation of this Hashtable object in the form of a set of entries,
+enclosed in braces and separated by the ASCII characters ", " (comma and space).
+24.values(): Returns a Collection view of the values contained in this map.
+    Methods Declared in interface java.util.Map
+1.forEach(BiConsumer<? super K,? super V> action)
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+2.getOrDefault(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+3.putIfAbsent(K key, V value)
+If the specified key is not already associated with a value (or is mapped to null) associates
+it with the given value and returns null, else returns the current value.
+4.remove(Object key, Object value)
+Removes the entry for the specified key only if it is currently mapped to the specified value.
+5.replace(K key, V value)
+Replaces the entry for the specified key only if it is currently mapped to some value.
+6.replace(K key, V oldValue, V newValue)
+Replaces the entry for the specified key only if currently mapped to the specified value.
+7.replaceAll(BiFunction<? super K,? super V,? extends V> function)
+Replaces each entry's value with the result of invoking the given function on that entry until all entries have been
+processed or the function throws an exception.
+    Advantages of Hashtable
+1.Thread-safe
+2.Simple to use
+    Disadvantages of Hashtable
+1.Obsolete
+2.Limited functionality
+3.Poor performance
+4.Null Support
+5.Iterator Issue
+    Differences between HashMap and HashTable in Java
+Hashmap	                                        Hashtable
+No method is synchronized.                      Every method is synchronized.
+Null is allowed for both key and value.         Null is not allowed for both key and value. Otherwise, we will get a null pointer exception.
+
+    HashMap
+A HashMap is a part of Java’s Collection Framework and implements the Map interface.
+It stores elements in key-value pairs, where:
+-Keys are unique.
+-Values can be duplicated.
+-Data is stored using hashing for quick access, insertion, and deletion.
+Internally uses Hashing (similar to Hashtable in Java).
+    Key Features of HashMap
+-Not synchronized
+-Allows to store the null keys as well, but there should be only one null key object, and there can be any number of null values.
+-Duplicate keys are not allowed in HashMap
+if you try to insert a duplicate key, it will replace the existing value of the corresponding key.
+-HashMap uses keys in the same way as an Array uses an index.
+It takes two parameters namely as follows
+-The type of keys maintained by this map
+-The type of mapped values
+    Capacity of HashMap
+The capacity of a HashMap is the number of buckets it can hold for storing entries.
+new capacity=old capacity×2
+Default capacity: Default capacity of hashmap is 16.
+Load factor: 0.75 (default): when 75% of the capacity is filled, the capacity is doubled.
+    Java HashMap Constructors
+1. HashMap()
+It is the default constructor which creates an instance of HashMap with an initial capacity of 16 and a load factor of 0.75.
+2.HashMap(int initialCapacity)
+It creates a HashMap instance with a specified initial capacity and load factor of 0.75.
+3.HashMap(int initialCapacity, float loadFactor)
+It creates a HashMap instance with a specified initial capacity and specified load factor.
+4.HashMap(Map map)
+It creates an instance of HashMap with the same mappings as the specified map.
