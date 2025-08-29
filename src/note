@@ -1610,3 +1610,137 @@ It creates a HashMap instance with a specified initial capacity and load factor 
 It creates a HashMap instance with a specified initial capacity and specified load factor.
 4.HashMap(Map map)
 It creates an instance of HashMap with the same mappings as the specified map.
+    Performing Various Operations on HashMap
+1. Adding Elements in HashMap in Java
+To add an element to the map, we can use the put() method.
+However, the insertion order is not retained in the Hashmap.
+2. Changing Elements in HashMap in Java
+After adding the elements if we wish to change the element,
+it can be done by again adding the element with the put() method.
+3. Removing Element from Java HashMap
+To remove an element from the Map, we can use the remove() method.
+This method takes the key value and removes the mapping for a key from this map if it is present in the map.
+4. Traversal of Java HashMap
+We can use the Iterator interface to traverse over any structure of the Collection Framework.
+Since Iterators work with one type of data we use Entry< ? , ? > to resolve the two separate types into a compatible format.
+Then using the next() method we print the entries of HashMap.
+    Synchronized HashMap
+HashMap is unsynchronized meaning multiple threads can access it at the same time.
+If at least one thread modifies it, you must synchronize externally.
+wrap with Collections.synchronizedMap()  to prevent concurrent access issues.
+    Map m = Collections.synchronizedMap(new HashMap(...));
+Now the Map m is synchronized
+Iterators of this class are fail-fast if any structure modification is done after the creation of the iterator,
+in any way except through the iterator's remove method.
+In a failure of an iterator, it will throw ConcurrentModificationException.
+    Methods of HashMap
+K – The type of the keys in the map.
+V – The type of values mapped in the map.
+1.clear(): Removes all of the mappings from this map.
+2.clone(): Returns a shallow copy of this HashMap instance.
+3.compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+Attempts to update or compute a mapping for the specified key and its current mapped value
+4.computeIfAbsent(K key, Function<?super K,? extends V> mappingFunction)
+Adds computed value if key absent/null.
+5.computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+6.containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+7.containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+8.entrySet(): Returns a Set view of the mappings contained in this map.
+9.get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+10.isEmpty(): Returns true if this map contains no key-value mappings.
+11.keySet(): Returns a Set view of the keys contained in this map.
+12.merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associate it with the given non-null value.
+13.put(K key, V value): Associates the specified value with the specified key in this map.
+14.putAll(Map<? extends K,? extends V> m): Copies all of the mappings from the specified map to this map.
+15.remove(Object key): Removes the mapping for the specified key from this map if present.
+16.size(): Returns the number of key-value mappings in this map.
+17.values(): Returns a Collection view of the values contained in this map.
+     Methods inherited from class java.util.AbstractMap
+1.equals(): Compares the specified object with this map for equality.
+2.hashCode(): Returns the hash code value for this map.
+3.toString(): Returns a string representation of this map.
+    Methods inherited from interface java.util.Map
+1.equals(): Compares the specified object with this map for equality.
+2.forEach(BiConsumer<? super K, ? super V> action)
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+3.getOrDefault(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+4.hashCode(): Returns the hash code value for this map.
+5.putIfAbsent(K key, V value)
+If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+6.remove(Object key, Object value)
+Removes the entry for the specified key only if it is currently mapped to the specified value.
+7.replace(K key, V value): Replaces the entry for the specified key only if it is currently mapped to some value.
+8.replace(K key, V oldValue, V newValue): Replaces the entry for the specified key only if currently mapped to the specified value.
+9.replaceAll(BiFunction<? super K,? super V,? extends V> function)
+Replaces each entry's value with the result of invoking the given function on that entry until all entries have
+been processed or the function throws an exception.
+
+    LinkedHashMap
+LinkedHashMap in Java implements the Map interface of the Collections Framework.
+It stores key-value pairs while maintaining the insertion order of the entries.
+-Stores unique key-value pairs.
+-Maintains insertion order.
+-Allows one null key and multiple null values.
+-Fast performance for basic operations.
+The LinkedHashMap Class is just like HashMap
+with an additional feature of maintaining an order of elements inserted into it
+    Internal Working of LinkedHashMap
+A LinkedHashMap is an extension of the HashMap class and it implements the Map interface.
+In this class, the data is stored in the form of nodes.
+The implementation of the LinkedHashMap is very similar to a doubly-linked list.
+herefore, each node of the LinkedHashMap is represented as:
+Previous Key Value Next
+Next: Since the LinkedHashMap stores the insertion order, this contains the address to the next node of the LinkedHashMap.
+Previous: This parameter contains the address to the previous node of the LinkedHashMap.
+    Synchronized LinkedHashMap
+The LinkedHashMap class is not synchronized.
+If it is used in a multi-threaded environment where structural modifications like adding
+or removing elements are made concurrently then external synchronization is needed.
+This can be done by wrapping the map using Collections.synchronizedMap() method.
+    Constructors of LinkedHashMap Class
+LinkedHashMap class provides various constructors for different use cases.
+1.LinkedHashMap(): This is used to construct a default LinkedHashMap constructor.
+    LinkedHashMap<K, V> lhm = new LinkedHashMap<>();
+2.LinkedHashMap(int capacity): It is used to initialize a particular LinkedHashMap with a specified capacity.
+    LinkedHashMap<K, V> lhm = new LinkedHashMap<>(int capacity);
+3.LinkedHashMap(Map<? extends K, extends V> map):
+It is used to initialize a particular LinkedHashMap with the elements of the specified map.
+    LinkedHashMap<K, V> lhm = new LinkedHashMap<K, V>(Map<? extends K, extends V> map);
+4.LinkedHashMap(int capacity, float fillRatio)
+It is used to initialize both the capacity and fill ratio for a LinkedHashMap.
+-loadFactor: is a metric that determines when to increase the size of the LinkedHashMap automatically.
+By default, this value is 0.75 which means that the size of the map is increased when the map is 75% full.
+    LinkedHashMap<K, V> lhm = new LinkedHashMap<K, V>(int capacity, float fillRatio);
+5. LinkedHashMap(int capacity, float fillRatio, boolean Order)
+his constructor is also used to initialize both the capacity and fill ratio for a
+LinkedHashMap along with whether to follow the insertion order or not.
+    LinkedHashMap<K, V> lhm = new LinkedHashMap<K, V>(int capacity, float fillRatio, boolean Order);
+    Methods of LinkedHashMap
+1.containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+2.entrySet(): Returns a Set view of the mappings contained in this map.
+3.get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+4.keySet(): Returns a Set view of the keys contained in this map.
+5.removeEldestEntry(Map.Entry<K,V> eldest): Returns true if this map should remove its eldest entry.
+6.values(): Returns a Collection view of the values contained in this map.
+    Performing Various Operations on LinkedHashMap
+1. Adding Elements in LinkedHashMap
+In order to add an element to the LinkedHashMap, we can use the put() method.
+2. Updating Elements in LinkedHashMap
+After adding elements if we wish to change the element, it can be done by again adding the element using the put() method.
+3.Removing Element in LinkedHashMap
+In order to remove an element from the LinkedHashMap, we can use the remove() method.
+4. Iterating through the LinkedHashMap
+There are multiple ways to iterate through the LinkedHashMap.
+The most famous way is to use a for-each loop over the set view of the map
+(fetched using map.entrySet() instance method).
+    Advantages of LinkedHashMap
+-It maintains insertion order.
+-Faster iteration.
+-Allows null values.
+    Disadvantages of LinkedHashMap
+-Higher memory usage.
+-Slower insertion.
+-Less efficient for large datasets.
