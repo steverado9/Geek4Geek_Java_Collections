@@ -977,33 +977,7 @@ the runtime type of the returned array is that of the specified array.
     HashSet                                                                 CopyOnWriteArraySet
 1.It belongs to java.util package                                          It belongs to java.util.concurrent package
 2.HashSet is not synchronized, meaning it’s not thread-safe.               CopyOnWriteArraySet is synchronized and thread-safe.
-    ConcurrentHashMap in Java
-In Java, the ConcurrentHashMap is a thread-safe implementation of the Map interface.
-It allows multiple threads to read and write data simultaneously
--The default concurrency level of ConcurrentHashMap is 16
-    Constructors
--Concurrency-Level: It is the number of threads concurrently updating the map.
--Load-Factor: It’s a threshold, used to control resizing.
--Initial Capacity: Accommodation of a certain number of elements initially provided by the implementation.
-    Constructor
--ConcurrentHashMap(): This constructor creates a new, empty map with a default initial capacity (16),
-load factor (0.75) and concurrencyLevel (16).
--ConcurrentHashMap(int initialCapacity): This constructor creates a new, empty map with the specified initial capacity,
-and with default load factor (0.75) and concurrencyLevel (16).
--ConcurrentHashMap(int initialCapacity, float loadFactor): This constructor creates a new,
-empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16)
--ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel):
-This constructor creates a new, empty map with the specified initial capacity, load factor, and concurrency level.
--ConcurrentHashMap(Map m): This constructor creates a new map with the same mappings as the given map.
-    Performing Various Operations on ConcurrentHashMap
-1.Adding Elements: We can use put() or putAll() to insert element to a ConcurrentHashMap.
-2.Removing Elements: We can use the remove() method to remove elements from the ConcurrentHashMap.
-To clear the entire map, we can use the clear().
-3.Accessing Elements: We can use the  get() method to access the elements of the ConcurrentHashMap.
-4.Iterating Elements: We can use the Iterator interface to traverse over the elements of ConcurrentHashMap.
-Note:
-If a thread-safe highly-concurrent implementation is desired,
-then it is recommended to use ConcurrentHashMap in place of Hashtable.
+
     LinkedHashSet
 This is very similar to a HashSet.
 It combines the functionality of a HashSet with a LinkedList to maintain the insertion order of elements.
@@ -1744,3 +1718,104 @@ The most famous way is to use a for-each loop over the set view of the map
 -Higher memory usage.
 -Slower insertion.
 -Less efficient for large datasets.
+
+     ConcurrentHashMap in Java
+In Java, the ConcurrentHashMap is a thread-safe implementation of the Map interface.
+It allows multiple threads to read and write data simultaneously
+-The default concurrency level of ConcurrentHashMap is 16
+    Constructors
+-Concurrency-Level: It is the number of threads concurrently updating the map.
+-Load-Factor: It’s a threshold, used to control resizing.
+-Initial Capacity: Accommodation of a certain number of elements initially provided by the implementation.
+    Constructor
+-ConcurrentHashMap(): This constructor creates a new, empty map with a default initial capacity (16),
+load factor (0.75) and concurrencyLevel (16).
+-ConcurrentHashMap(int initialCapacity): This constructor creates a new, empty map with the specified initial capacity,
+and with default load factor (0.75) and concurrencyLevel (16).
+-ConcurrentHashMap(int initialCapacity, float loadFactor): This constructor creates a new,
+empty map with the specified initial capacity and load factor and with the default concurrencyLevel (16)
+-ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel):
+This constructor creates a new, empty map with the specified initial capacity, load factor, and concurrency level.
+-ConcurrentHashMap(Map m): This constructor creates a new map with the same mappings as the given map.
+       Performing Various Operations on ConcurrentHashMap
+1.Adding Elements: We can use put() or putAll() to insert element to a ConcurrentHashMap.
+2.Removing Elements: We can use the remove() method to remove elements from the ConcurrentHashMap.
+To clear the entire map, we can use the clear().
+3.Accessing Elements: We can use the  get() method to access the elements of the ConcurrentHashMap.
+4.Iterating Elements: We can use the Iterator interface to traverse over the elements of ConcurrentHashMap.
+Note:
+If a thread-safe highly-concurrent implementation is desired,
+then it is recommended to use ConcurrentHashMap in place of Hashtable.
+
+    SortedMap
+SortedMap is an interface in the collection framework that is a part of java.util package and extends the Map interface
+It represents a map that maintains its keys in a sorted order
+The keys in a SortedMap are sorted according to their natural ordering or by a Comparator provided at the time of map creation.
+The primary class that implements SortedMap is TreeMap which maintains elements in a Red-Black tree structure to ensure sorting.
+-A comparator can be passed to customize the sorting order of the keys.
+-SortedMap does not allow null keys or null values. If we insert a null key or value it will throw an error.
+    Creating SortedMap Objects
+Since SortedMap is an interface, we cannot directly crate object of this type.
+we need to use a class that implements this interface such as TreeMap or ConcurrentSkipListMap for a thread-safe version.
+    Performing Various Operations on SortedMap Interface
+1. Adding Elements
+We can use the put() method to insert element in an SortedMap.
+2. Changing Elements
+To change the element in a SortedMap, we can use the put() method again with the same key but a new value.
+Since the map stores elements using keys, updating the value is as simple as adding the key with its new value.
+3. Removing Element
+We can use the remove() method to remove an element from the SortedMap.
+4. Iterating Element: There are multiple ways to iterate through the Map.
+The most famous way is to use an enhanced for loop and get the keys.
+The value of the key is found by using the getValue() method.
+Note:
+-The class which implements the SortedMap interface is TreeMap.
+-TreeMap uses a tree data structure for storage. Objects are stored in sorted, ascending order.
+-But we can also store in descending order by passing a comparator.
+    Methods
+1.comparator():
+Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
+2.entrySet(): Returns a Set view of the mappings contained in this map.
+3.firstKey(): Returns the first (lowest) key currently in this map.
+4.headMap(K toKey): Returns a view of the portion of this map whose keys are strictly less than toKey.
+5.keySet(): Returns a Set view of the keys contained in this map.
+6.lastKey(): Returns the last (highest) key currently in this map.
+7.subMap(K fromKey, K toKey): Returns a view of the portion of this map whose keys range from fromKey, inclusive, to toKey, exclusive.
+8.tailMap(K fromKey): Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
+9.values(): Returns a Collection view of the values contained in this map.
+    Methods Inherited from Interface java.util.Map
+1.clear():  This method is used to clear and remove all of the elements or mappings from a specified Map collection.
+2.containsKey(Object): This method is used to check whether a particular key is being mapped into the Map or not.
+3.containsValue(Object) : This method is used to check whether a particular value is being mapped by a single or more than one key in the Map.
+4.entrySet(): This method is used to create a set out of the same elements contained in the map
+5.equals(Object): This method is used to check for equality between two maps
+6.get(Object): This method is used to retrieve or fetch the value mapped by a particular key mentioned in the parameter.
+7.hashCode(): This method is used to generate a hashCode for the given map containing key and values.
+8.isEmpty(): This method is used to check if a map is having any entry for key and value pairs.
+9.keySet(): This method is used to return a Set view of the keys contained in this map.
+10.put(Object, Object): his method is used to associate the specified value with the specified key in this map.
+11.putAll(Map): This method is used to copy all of the mappings from the specified map to this map.
+12.remove(Object): This method is used to remove the mapping for a key from this map if it is present in the map.
+13.size(): This method is used to return the number of key/value pairs available in the map.
+14.values(): This method is used to create a collection out of the values of the map.
+    NavigableMap Interface
+The NavigableMap interface is a member of the Java Collection Framework.
+It belongs to java.util package and It is an extension of SortedMap .
+Which provides convenient navigation methods for dealing with elements that are sorted based on their keys.
+This interface allows us to navigate through the map's keys in a more efficient and flexible manner,
+-In NavigableMap entries are automatically sorted by their keys, allowing easy navigation in both forward and reverse order.
+    Implementing Classes
+The NavigableMap has two implementing classes which are ConcurrentSkipListMap and TreeMap.
+    Performing Various Operations on NavigableMap Interface
+1. Adding Elements:
+To add elements to a NavigableMap we can use any methods of the Map interface.
+2. Removing Elements: We can use the remove() method to remove elements from the NavigableMap.
+If we want to remove all the elements from the map we can use clear() method.
+3. Accessing Elements:  We can access the elements of a NavigableMap using get() method.
+4. Iterating Elements: We can use the Iterator interface to traverse a NavigableMap.
+-To handle the key-value pairs, we use Map.Entry<?> and the next() method to access element.
+Alternatively, we can use a for-each loop to get keys and fetch values using getValue() method.
+    Methods
+NavigableMap inherits methods from the Map interface, SortedMap interface.
+K: The type of the keys in the map.
+V: The type of values mapped in the map.
