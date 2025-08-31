@@ -1798,6 +1798,7 @@ Returns the comparator used to order the keys in this map, or null if this map u
 12.remove(Object): This method is used to remove the mapping for a key from this map if it is present in the map.
 13.size(): This method is used to return the number of key/value pairs available in the map.
 14.values(): This method is used to create a collection out of the values of the map.
+
     NavigableMap Interface
 The NavigableMap interface is a member of the Java Collection Framework.
 It belongs to java.util package and It is an extension of SortedMap .
@@ -1819,3 +1820,143 @@ Alternatively, we can use a for-each loop to get keys and fetch values using get
 NavigableMap inherits methods from the Map interface, SortedMap interface.
 K: The type of the keys in the map.
 V: The type of values mapped in the map.
+1.ceilingEntry(K key):
+Returns a key-value mapping associated with the least key greater than or equal to the given key
+2.ceilingKey(K key): Returns the least key greater than or equal to the given key, or null if there is no such key.
+3.descendingKeySet(): Returns a reverse order NavigableSet view of the keys contained in this map.
+4.descendingMap(): Returns a reverse order view of the mappings contained in this map.
+5.firstEntry(): Returns a key-value mapping associated with the least key in this map, or null if the map is empty.
+6.floorEntry(K key): Returns a key-value mapping associated with the greatest key less than or equal to the given key, or null if there is no such key.
+7.floorKey(K key): Returns the greatest key less than or equal to the given key, or null if there is no such key.
+8.headMap(K toKey): Returns a view of the portion of this map whose keys are strictly less than toKey.
+9.headMap(K toKey, boolean inclusive): Returns a view of the portion of this map whose keys are less than (or equal to, if inclusive is true) toKey.
+10.higherEntry(K key): Returns a key-value mapping associated with the least key strictly greater than the given key, or null if there is no such key.
+11.higherKey(K key): Returns the least key strictly greater than the given key, or null if there is no such key.
+12.lastEntry(): Returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.
+13.lowerEntry(K key): Returns a key-value mapping associated with the greatest key strictly less than the given key, or null if there is no such key.
+14.lowerKey(K key): Returns the greatest key strictly less than the given key, or null if there is no such key.
+15.navigableKeySet(): Returns a NavigableSet view of the keys contained in this map.
+16.pollFirstEntry(): Removes and returns a key-value mapping associated with the least key in this map, or null if the map is empty.
+17.pollLastEntry(): Removes and returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.
+18.subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive)
+Returns a view of the portion of this map whose keys range from fromKey to toKey.
+19.subMap(K fromKey, K toKey): Returns a view of the portion of this map whose keys range from fromKey, inclusive, to toKey, exclusive.
+20.tailMap(K fromKey): Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
+21.tailMap(K fromKey, boolean inclusive):
+Returns a view of the portion of this map whose keys are greater than (or equal to, if inclusive is true) fromKey.
+    Methods Inherited from Interface java.util.SortedMap
+1.comparator(): Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
+2.entrySet(): Returns a Set view of the mappings contained in this map.
+3.firstKey(): Returns the first (lowest) key currently in this map.
+4.keySet(): Returns a Set view of the keys contained in this map.
+5.lastKey(): Returns the last (highest) key currently in this map.
+6.values(): Returns a Collection view of the values contained in this map.
+    Methods Inherited from Interface java.util.Map
+1.clear(): Removes all of the mappings from this map.
+2.compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping).
+3.computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)
+If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.
+4.computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+5.containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+6.containsValue(Object value): 	Returns true if this map maps one or more keys to the specified value.
+7.equals(Object o): Compares the specified object with this map for equality.
+8.forEach(BiConsumer<? super K,? super V> action):
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+9.get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+10.getOrDefault(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+11.hashCode(): Returns the hash code value for this map.
+12.isEmpty(): Returns true if this map contains no key-value mappings.
+13.merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+14.put(K key, V value): Associates the specified value with the specified key in this map.
+15.putAll(Map<? extends K,? extends V> m): Copies all of the mappings from the specified map to this map.
+16.putIfAbsent(K key, V value): If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+17.remove(Object key): Removes the mapping for a key from this map if it is present.
+18.remove(Object key, Object value): Removes the entry for the specified key only if it is currently mapped to the specified value.
+19.replace(K key, V value): Replaces the entry for the specified key only if it is currently mapped to some value.
+20.replace(K key, V oldValue, V newValue):
+Replaces the entry for the specified key only if currently mapped to the specified value.
+21.replace(K key, V oldValue, V newValue)
+Replaces the entry for the specified key only if currently mapped to the specified value.
+22.replaceAll(BiFunction<? super K,? super V,? extends V> function)
+Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.
+23.size(): Returns the number of key-value mappings in this map.
+
+    ConcurrentMap Interface
+It is designed for thread-safe concurrent access to its entries without compromising the consistency of the map.
+The interface resides in the java.util.concurrent package and extends the Map interface.
+HashMap operations are not synchronized
+while Hashtable provides synchronization
+Though Hashtable is thread-safe, it is not very efficient.
+To solve this issue, the Java Collections Framework introduced ConcurrentMap
+-It extends the Map interface in Java
+-ConcurrentNavigableMap<K,V> is the SubInterface.
+-ConcurrentMap is implemented by ConcurrentHashMap, and ConcurrentSkipListMap classes.
+-ConcurrentMap is known as a synchronized Map.
+    Declaration of ConcurrentMap Interface
+ConcurrentMap<K, V> map = new ConcurrentHashMap<K, V>();
+Note: Here, "k" is the type of the key, and "v" is the type of value.
+    Implementing Classes
+To use ConcurrentMap we need to import it from the Java.util.concurrent package
+import java.util.concurrent.ConcurrentMap;
+or
+import java.util.concurrent.*;
+    ConcurrentMap is implemented by two classes which are
+ConcurrentHashMap and ConcurrentSkipListMap.
+-ConcurrentHashMap is a high performance thread-safe map
+-ConcurrentSkipListMap is a thread-safe, sorted map
+    Performing Various Operations on ConcurrentMap
+1. Adding Elements:
+The put() method of ConcurrentSkipListMap is an in-built function in Java which associates the specified
+value with the specified key in this map.
+2. Removing Elements
+The remove() method of ConcurrentSkipListMap is an in-built function in Java which removes the mapping for the specified key from this map.
+3. Accessing Elements
+We can access the elements of a ConcurrentSkipListMap using the get() method.
+4. Iterating Elements
+We can use the iterator to traverse a ConcurrentMap by iterating over its Entry set accessing
+each key-value pair with next() method.
+    Methods
+1.compute(K key, BiFunction<? super K,? superV,? extends V> remappingFunction)
+Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping).
+2.computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)
+If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.
+3.computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+4.forEach(BiConsumer<? super K,? super V> action)
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+5.getOrDefault(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+6.merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+7.putIfAbsent(K key, V value): If the specified key is not already associated with a value, associates it with the given value.
+8.remove(Object key, Object value): Removes the entry for a key only if currently mapped to a given value.
+9.replace(K key, V value): Replaces the entry for a key only if currently mapped to some value.
+10.replace(K key, V oldValue, V newValue): Replaces the entry for a key only if currently mapped to a given value.
+11. replaceAll(BiFunction<? super K,? super V,? extends V> function)
+Replaces each entry’s value with the result of invoking the given function on that entry until all entries have
+been processed or the function throws an exception.
+    Methods Inherited from Interface java.util.Map
+1.clear(): Removes all of the mappings from this map (optional operation).
+2.containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+3.containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+4.entry(K k, V v): Returns an immutable Map.Entry containing the given key and value.
+5.entrySet(): Returns a Set view of the mappings contained in this map.
+6.equals(Object o): Compares the specified object with this map for equality.
+7.get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+8.hashCode(): Returns the hash code value for this map.
+9.isEmpty(): Returns true if this map contains no key-value mappings.
+10.keySet(): Returns a Set view of the keys contained in this map.
+11.of(): Returns an immutable map containing zero mappings.
+12.of(K k1, V v1): Returns an immutable map containing a single mapping.
+13.ofEntries(Map.Entry<? extends K,? extends V>… entries)
+Returns an immutable map containing keys and values extracted from the given entries.
+14.put(K key, V value): Associates the specified value with the specified key in this map (optional operation).
+15.putAll(Map<? extends K,? extends V> m)
+Copies all of the mappings from the specified map to this map (optional operation).
+16.remove(Object key): Removes the mapping for a key from this map if it is present
+17.size(): Returns the number of key-value mappings in this map.
+18.values(): Returns a Collection view of the values contained in this map.
