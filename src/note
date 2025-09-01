@@ -1960,3 +1960,32 @@ Copies all of the mappings from the specified map to this map (optional operatio
 16.remove(Object key): Removes the mapping for a key from this map if it is present
 17.size(): Returns the number of key-value mappings in this map.
 18.values(): Returns a Collection view of the values contained in this map.
+    TreeMap
+TreeMap in Java is an implemented class that extends Map
+storing key-value pairs in a sorted order
+    Key Features of TreeMap
+-The keys in a TreeMap are always sorted.
+-TreeMap does not allow null as a key; it allows null as a value
+-TreeMap is not synchronized.
+-Entry pairs returned by the methods in this class and their views represent snapshots of mappings at the time they were produced.
+    Constructors of TreeMap
+In order to create a TreeMap, we need to create an object of the TreeMap class.
+The following are the constructors available in this class:
+1. TreeMap():
+This constructor is used to build an empty TreeMap that will be sorted by using the natural order of its keys.
+    TreeMap<K, V> map = new TreeMap<>();
+2. TreeMap(Comparator comp)
+This constructor is used to build an empty TreeMap object in which the elements will need an external specification of the sorting order.
+3. TreeMap(Map M)
+This constructor is used to initialize a TreeMap with the entries from the given map M which will be sorted by using the natural order of the keys.
+    Performing Various Operations on TreeMap
+1. Adding Elements
+We can use the put() method to insert elements to a TreeMap.
+for every element, the keys are compared and sorted in ascending order.
+2.Changing Elements
+To change the element in a TreeMap, simply use the put() method again with the same key and the new value.
+3. Removing Element
+We can use the remove() method to remove element from the TreeMap.
+4. Iterating Elements
+There are multiple ways to iterate through the Map. The most famous way is to use a for-each loop and get the keys.
+The value of the key is found by using the getValue() method.
