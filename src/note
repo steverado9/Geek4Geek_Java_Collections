@@ -1989,3 +1989,186 @@ We can use the remove() method to remove element from the TreeMap.
 4. Iterating Elements
 There are multiple ways to iterate through the Map. The most famous way is to use a for-each loop and get the keys.
 The value of the key is found by using the getValue() method.
+    Methods of TreeMap
+1.clear(): The method removes all mappings from this TreeMap and clears the map.
+2.clone(): The method returns a shallow copy of this TreeMap.
+3.containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+4.containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+5.entrySet(): Returns a set view of the mappings contained in this map.
+6.firstKey(): Returns the first (lowest) key currently in this sorted map.
+7.get(Object key): Returns the value to which this map maps the specified key.
+8.headMap(Object key_value): The method returns a view of the portion of the map strictly less than the parameter key_value.
+9.keySet(): The method returns a Set view of the keys contained in the treemap.
+10.lastKey(): Returns the last (highest) key currently in this sorted map.
+11.put(Object key, Object value): The method is used to insert a mapping into a map.
+12.putAll(Map map): Copies all of the mappings from the specified map to this map.
+13.remove(Object key): 	Removes the mapping for this key from this TreeMap if present.
+14.size(): Returns the number of key-value mappings in this map.
+15.subMap((K startKey, K endKey): The method returns the portion of this map whose keys range from startKey, inclusive, to endKey, exclusive.
+16.values(): Returns a collection view of the values contained in this map.
+
+    1. Core Interfaces
+The foundation of the Collections Framework is built on interfaces like Collection, List, Set, Queue, Deque and Map.
+They define the behavior of different collection types and serve as a blueprint for implementations.
+    1-Collection Interface
+is a core member of the Java Collections Framework located in the java.util package.
+The Collection interface is not directly implemented by any class.
+it is implemented indirectly through its sub-interfaces like List, Queue, and Set.
+    Sub Interfaces Collection Interface
+-List
+-Set
+-Queue
+-Deque
+-SortedSet
+-NavigableSet
+
+    2-List Interface
+List Interface provides a blueprint for the implementation of list classes.
+    Implementation of List Interface
+-ArrayList class
+-LinkedList class
+-Vector class
+-Stack class
+-AbstractList Interface
+-AbstractSequentialList Interface
+
+    3-Set Interface
+A Set represents a collection of unique elements, meaning it does not allow duplicate values.
+    Implementation of Set Interface
+-HashSet class
+-LinkedHashSet class
+-TreeSet class
+-EnumSet
+-SortedSet Interface
+-NavigableSet Interface
+-ConcurrentSkipListSet class
+
+    4.Queue Interface
+This extends the Collection interface.
+    Key Features
+-FIFO Order : Elements are processed in the order they were inserted (First-In-First-Out).
+- Unlike List, elements cannot be accessed directly by index.
+-Multiple Variants : Includes PriorityQueue, Deque, ArrayDeque and LinkedList implementations.
+-Two Sets of Methods : Throws-exception versions (add, remove, element) and safe versions (offer, poll, peek).
+We cannot instantiate a Queue directly as it is an interface.
+Here, we can use a class like LinkedList or PriorityQueue that implements this interface.
+    Common Methods
+1.add(element): Adds an element to the rear of the queue. If the queue is full, it throws an exception.
+2.offer(element): Adds an element to the rear of the queue. If the queue is full, it returns false.
+3.remove(): Removes and returns the element at the front of the queue. If the queue is empty, it throws an exception.
+4.poll(): Removes and returns the element at the front of the queue. If the queue is empty, it returns null.
+element(): Returns the element at the front of the queue without removing it. If the queue is empty, it throws an exception.
+peek(): Returns the element at the front of the queue without removing it. If the queue is empty, it returns null.
+    Classes that implement the Queue Interface
+-PriorityQueue
+PriorityQueue class lets us process elements based on their priority instead of the usual FIFO order of a normal queue.
+It’s useful when elements must be handled in priority order
+- LinkedList
+LinkedList is a linear data structure where elements are stored as separate objects, each containing data and a link to the next element.
+-PriorityBlockingQueue
+PriorityBlockingQueue is a thread-safe,
+unbounded blocking queue that orders elements like PriorityQueue and supports blocking retrieval.
+    Methods of Queue Interface
+1.add(E e): Inserts element; throws exception if full.
+2.offer(E e): Inserts element; returns false if full.
+3.remove(): Removes head; throws exception if empty.
+4.poll(): Removes head; returns null if empty.
+5.element(): Retrieves head; throws exception if empty.
+6.peek(): Retrieves head; returns null if empty.
+7.addAll(Collection<? extends E> c): Adds all elements from another collection.
+8.clear(): Removes all elements.
+9.contains(Object o): Checks if element exists.
+10.containsAll(Collection<?> c): Checks if all elements exist.
+11.equals(Object o): Compares with another collection.
+12.hashCode(): Returns hash code.
+13.isEmpty(): Checks if collection is empty.
+14.iterator(): Returns iterator for elements.
+15.remove(Object o): Removes a specific element.
+16.removeAll(Collection<?> c): Removes all matching elements.
+17.retainAll(Collection<?> c): Keeps only specified elements.
+18.size(): Returns number of elements.
+19.toArray(): Returns elements as an array.
+20.toArray(T[] a): Returns elements as a typed array.
+21.forEach(Consumer<? super E> action): Performs action for each element.
+22.void forEach(Consumer<? super E> action): Performs action for each element.
+23.Spliterator<E> spliterator(): Returns a spliterator.
+24.Stream<E> stream(): Returns a sequential stream.
+25.Stream<E> parallelStream(): Returns a parallel stream.
+
+    5.Deque Interface
+A Deque (double-ended queue) allows adding or removing elements from both ends
+and can work as either a FIFO queue or a LIFO stack.
+-Supports FIFO and LIFO : Can function as a queue (FIFO) or a stack (LIFO).
+-No Capacity Restriction
+-More Versatile than Queue
+-Efficient Insert/Remove at Both End
+-The class which implements the Deque interface is ArrayDeque.
+Deque Interface extends the Queue Interface
+Since Deque is an interface, objects cannot be created of the type Deque
+    class which implements the Deque interface
+-ArrayDeque
+    Deque Operations using ArrayDeque
+1.Adding Elements
+In order to add an element in a Deque, we can use the add() method.
+The difference between a Queue and a Deque is that in Deque, the addition is possible from any direction.
+Therefore, there are other two methods available named addFirst() and addLast() which are used to add the elements at either end.
+2. Removing Elements
+In order to remove an element from a Deque, there are various methods available.
+-Since we can also remove from both ends, the Deque interface provides us with removeFirst(), removeLast() methods.
+-This interface also provides us with the poll(), pop(), pollFirst(), pollLast() methods where pop() is used to remove and return the head of the Deque.
+-However, poll() is used because this offers the same functionality as pop() and doesn't return an exception when the Deque is empty.
+3. Iterating through the Deque
+Since a Deque can be iterated from both directions,
+the iterator method of the Deque interface provides us two ways to iterate.
+One from the first and the other from the back.
+    ArrayDeque
+-ArrayDeque in the Java Collection Framework is a resizable array that allows adding or removing elements from both ends.
+-It has no capacity limit and grows as needed. It is not thread-safe.
+-ArrayDeque is usually faster than Stack for stack operations and faster than LinkedList for queue operations.
+    Methods of Deque Interface
+- addFirst(E e): Inserts element at the front; throws exception if full.
+-addLast(E e): Inserts element at the end; throws exception if full.
+-offerFirst(E e): Inserts at front; returns false if full.
+-offerLast(E e): Inserts at end; returns false if full.
+-removeFirst(): Removes and returns first element; throws exception if empty.
+-removeLast(): Removes and returns last element; throws exception if empty.
+-pollFirst(): Removes and returns first element; returns null if empty.
+-pollLast(): Removes and returns last element; returns null if empty.
+-getFirst(): Retrieves first element without removing; throws exception if empty.
+-getLast(): Retrieves last element without removing; throws exception if empty.
+-peekFirst(): Retrieves first element without removing; returns null if empty.
+-peekLast(): Retrieves last element without removing; returns null if empty.
+-removeFirstOccurrence(Object o): Removes first occurrence of the element.
+-removeLastOccurrence(Object o): Removes last occurrence of the element.
+-Iterator<E> descendingIterator(): Returns iterator from tail to head.
+-add(E e): Inserts at tail; throws exception if full.
+-offer(E e): Inserts at tail; returns false if full.
+-remove(): Removes head; throws exception if empty.
+-poll(): Removes head; returns null if empty.
+-element(): Retrieves head; throws exception if empty.
+-peek(): Retrieves head; returns null if empty.
+     Queue / Deque Implementations
+1)AbstractQueue
+The AbstractQueue class in Java is a part of the Java Collection Framework.
+Implements the Collection interface and the AbstractCollection class.
+-It provides skeletal implementations of some Queue operations.
+-Methods add, remove, and element are based on offer, poll, and peek, respectively,
+    Key Features of AbstractQueue
+-Abstract Class
+It is an abstract class, meaning it cannot be instantiated directly.
+It serves as a base class for concrete queue implementations.
+-Provides default implementations for common methods of the Queue interface.
+- it does not provide methods to block threads, instead it focuses on basic queue behavior.
+    Constructors in Java AbstractQueue
+ The default constructor, but being abstract, it doesn't allow to create an AbstractQueue object.
+    Subclasses of Abstract Queue
+-ArrayBlockingQueue
+-ConcurrentLinkedQueue
+-DelayQueue
+-LinkedBlockingDeque
+-LinkedBlockingQueue
+-LinkedTransferQueue
+-PriorityBlockingQueue
+-PriorityQueue
+-SynchronousQueue.
+6.Map Interface
