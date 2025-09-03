@@ -2171,4 +2171,127 @@ It serves as a base class for concrete queue implementations.
 -PriorityBlockingQueue
 -PriorityQueue
 -SynchronousQueue.
+    Basic Operations
+1. Adding Elements:
+To add elements into the AbstractQueue, it provides two methods.
+The add(E e) method inserts the specified element into this queue if it is
+possible to do so immediately without violating capacity restrictions.
+2.Remove the Elements
+To remove the elements from AbstractQueue, it provides remove() and clear() methods.
+-The remove() method returns and removes the head of this queue.
+-The clear() method removes all the elements from this queue. The queue will be empty after this call returns.
+3. Accessing the Elements
+The element() method of AbstractQueue retrieves but does not remove, the head of this queue.
+    Methods of AbstractQueue
+1.add(E e): Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions.
+2.addAll(Collection<? extends E> c): Adds all the elements in the specified collection to this queue.
+3.clear(): Removes all the elements from this queue.
+4.element(): Retrieves, but does not remove, the head of this queue.
+5.remove(): Retrieves and removes the head of this queue.
+    Methods declared in class java.util.AbstractCollection
+1.contains(Object o): Returns true if this collection contains the specified element.
+2.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+3.isEmpty(): Returns true if this collection contains no elements.
+4.iterator(): Returns an iterator over the elements contained in this collection.
+5.remove(Object o): Removes a single instance of the specified element from this collection, if it is present.
+6.removeAll(Collection<?> c): Removes all of this collection's elements that are also contained in the specified collection.
+7.retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection.
+8.toArray(): Returns an array containing all of the elements in this collection.
+9.toArray(T[] a): Returns an array containing all of the elements in this collection; the runtime type of the returned array is that of the specified array.
+10.toString(): Returns a string representation of this collection.
+    Methods declared in interface java.util.Collection
+1.contains(Object o): Returns true if this collection contains the specified element.
+2.containsAll(Collection<?> c): Returns true if this collection contains all the elements in the specified collection.
+3.equals(Object o): Compares the specified object with this collection for equality.
+4.hashCode(): Returns the hash code value for this collection.
+5.isEmpty(): Returns true if this collection contains no elements.
+6.iterator(): Returns an iterator over the elements in this collection.
+7.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+8.remove(Object o): Removes a single instance of the specified element from this collection, if it is present
+9.removeAll(Collection<?> c): Removes all of this collection's elements that are also contained in the specified collection (optional operation).
+10.removeIf(Predicate<? super E> filter): Removes all the elements of this collection that satisfy the given predicate.
+11.retainAll(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection
+12.size(): Returns the number of elements in this collection.
+13.spliterator(): Creates a Spliterator over the elements in this collection.
+14.stream(): Returns a sequential Stream with this collection as its source.
+15.toArray(): Returns an array containing all the elements in this collection.
+16.toArray(IntFunction<T[]> generator): Returns an array containing all the elements in this collection, using the provided generator function to allocate the returned array.
+17.toArray(T[] a): Returns an array containing all the elements in this collection; the runtime type of the returned array is that of the specified array.
+    Methods declared in interface java.lang.Iterable
+1.forEach(Consumer<? super T> action): Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.
+    Methods declared in interface java.util.Queue
+1.offer(E e): Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions.
+2.peek(): Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+3.poll(): Retrieves and removes the head of this queue, or returns null if this queue is empty.
+Overall, the abstract queue in Java is a versatile and powerful tool for managing collections of data in a first-in-first-out manner.
+2)Priority Queue
+A PriorityQueue in Java is a queue where elements are ordered based on their priority, rather than the order of insertion.
+    Key feature
+-The PriorityQueue is based on the Priority Heap.
+-The size of the Priority Queue is dynamic, which means it will increase or decrease as per the requirement.
+-PriorityQueue does not allow null values.
+-We cannot create a PriorityQueue of Objects that are non-comparable.
+-PriorityQueue is not thread-safe
+    Constructors
+1. PriorityQueue():
+This method creates a PriorityQueue with the default initial capacity (11) that orders its elements according to their natural ordering.
+2. PriorityQueue(Collection<E> c)
+ This creates a PriorityQueue containing the elements in the specified collection.
+3.PriorityQueue(int initialCapacity)
+This creates a PriorityQueue with the specified initial capacity that orders its elements according to their natural ordering.
+4.PriorityQueue(int initialCapacity, Comparator<E> comparator)
+This creates a PriorityQueue with the specified initial capacity that orders its elements according to the specified comparator.
+5.PriorityQueue(PriorityQueue<E> c): This creates a PriorityQueue containing the elements in the specified priority queue.
+6.PriorityQueue(SortedSet<E> c)
+This creates a PriorityQueue containing the elements in the specified sorted set.
+7.PriorityQueue(Comparator<E> comparator)
+This creates a PriorityQueue with the default initial capacity and whose elements are ordered according to the specified comparator.
+    Different Operations on PriorityQueue
+1. Adding Elements
+To add an element in a priority queue, we can use the add() method.
+2. Removing Elements
+To remove an element from a priority queue, we can use the remove() method.
+3. Accessing the Elements
+Queue follows the First In First Out principle, we can access only the head of the queue.
+To access elements from a priority queue, we can use the peek() method.
+4. Iterating the PriorityQueue
+There are multiple ways to iterate through the PriorityQueue.
+The most famous way is converting the queue to the array and traversing using an iterator.
+Iterator does not traverse in priority order.
+    Methods in PriorityQueue Class
+1.add(E e): Inserts the specified element into this priority queue.
+2.clear(): Removes all of the elements from this priority queue.
+3.comparator(): Returns the comparator used to order the elements in this queue or null if this queue is sorted according to the natural ordering of its elements.
+4.contains?(Object o): Returns true if this queue contains the specified element.
+5.forEach?(Consumer<? super E> action): Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.
+6.iterator(): Returns an iterator over the elements in this queue.
+7.offer?(E e): Inserts the specified element into this priority queue.
+8.remove?(Object o): Removes a single instance of the specified element from this queue, if it is present.
+9.removeAll?(Collection<?> c): Removes all of this collection's elements that are also contained in the specified collection (optional operation).
+10.removeIf?(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+11.retainAll?(Collection<?> c): Retains only the elements in this collection that are contained in the specified collection
+12.spliterator(): Creates a late-binding and fail-fast Spliterator over the elements in this queue.
+13.toArray(): Returns an array containing all of the elements in this queue.
+14.toArray?(T[] a): Returns an array containing all of the elements in this queue; the runtime type of the returned array is that of the specified array.
+    Methods Declared in Interface java.util.Queue
+1.peek(): Retrieves, but does not remove, the head of this queue or returns null if this queue is empty.
+2.poll(): Retrieves and removes the head of this queue or returns null if this queue is empty.
+    Methods Declared in Class java.util.AbstractQueue
+1.addAll(Collection<? extends E> c): Adds all of the elements in the specified collection to this queue.
+2.element(): Retrieves, but does not remove, the head of this queue.
+3.remove(): Retrieves and removes the head of this queue.
+    Methods Declared in Class java.util.AbstractCollection
+1.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+2.isEmpty(): Returns true if this collection contains no elements.
+3.toString(): Returns a string representation of this collection.
+    Methods Declared in Interface java.util.Collection
+1.containsAll(Collection<?> c): Returns true if this collection contains all of the elements in the specified collection.
+2.equals(Object o): Compares the specified object with this collection for equality.
+3.hashCode(): Returns the hash code value for this collection.
+4.isEmpty(): Returns true if this collection contains no elements.
+5.parallelStream(): Returns a possibly parallel Stream with this collection as its source.
+6.size(): Returns the number of elements in this collection.
+7.stream(): Returns a sequential Stream with this collection as its source.
+8.toArray(IntFunction<T[]> generator): Returns an array containing all of the elements in this collection, using the provided generator function to allocate the returned array.
+    ConcurrentLinkedQueue
 6.Map Interface
