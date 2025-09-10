@@ -2364,3 +2364,98 @@ Maps store data as key-value pairs where keys are unique.
 WeakHashMap is an implementation of the Map interface.
 WeakHashMap is almost the same as HashMap except in the
 case of WeakHashMap if the object is specified as the key
+doesn’t contain any references.
+-WeakHashMap is the Hash table-based implementation of the Map interface, with weak keys.
+-An entry in a WeakHashMap will automatically be removed when its key is no longer in ordinary use.
+- More precisely, the presence of a mapping for a given key will not prevent the key from being discarded by the garbage collector.
+    A few important features of a WeakHashMap Class are
+-Both null values and null keys are supported in WeakHashMap.
+-It is not synchronized.
+    Constructors in WeakHashMap
+1.WeakHashMap()
+This constructor is used to create an empty WeakHashMap with the default initial capacity-(16) and load factor (0.75).
+2.WeakHashMap(int initialCapacity)
+This constructor is used to create an empty WeakHashMap with the given initial capacity and the default load factor (0.75).
+3. WeakHashMap(int initialCapacity, float loadFactor)
+This constructor is used to create an empty WeakHashMap with the given initial capacity and the given load factor.
+4.WeakHashMap(Map m)
+This constructor is used to create a new WeakHashMap with the same mappings as the specified map.
+    Methods in WeakHashMap
+1.clear(): Removes all of the mappings from this map.
+2.containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+3.containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+4.entrySet(): Returns a Set view of the mappings contained in this map.
+5.get(Object key): Returns the value to which the specified key is mapped.
+6.isEmpty(): Returns true if this map contains no key-value mappings.
+7.keySet(): Returns a Set view of the keys contained in this map.
+8.put(K key, V value): Associates the specified value with the specified key in this map.
+9.putAll(Map m):Copies all of the mappings from the specified map to this map.
+10.remove(Object key): Removes the mapping for a key from this weak hash map if it is present.
+11.size(): Returns the number of key-value mappings in this map.
+12.values(): Returns a Collection view of the values contained in this map.
+    IdentityHashMap
+The IdentityHashMap implements Map interface using Hashtable.
+This class is used when the user requires the objects to be compared via reference.
+This means that two keys with the same content but different object references will be treated as distinct keys in an IdentityHashMap.
+    Features of IdentityHashMap
+-It follows reference equality, instead of using the equals() method it uses the == operator.
+    Constructors of IdentityHashMap
+1. IdentityHashMap(): Constructs a new, empty identity hash map with a default expected maximum size.
+2. IdentityHashMap(int expectedMaxSize): Constructs a new, empty map with the specified expected maximum size.
+3. IdentityHashMap(Map m): Constructs a new identity hash map containing the key-value mappings in the specified map.
+    Basic Operations on IdentityHashMap
+1. Adding Elements
+To insert or add mapping into an IdentityHashMap, we have put() and putAll() methods.
+2. Removing Elements: To remove mappings, we use remove().
+3. Accessing the Elements
+We can access the elements of an IdentityHashMap using the get() method.
+4. Traversing
+ Since Iterators work with one type of data we use Entry< ? , ? > to resolve the two separate types into a compatible format.
+ Then using the next() method we print the elements of the IdentityHashMap.
+    Methods of IdentityHashMap
+1.clear(): Removes all of the mappings from this map.
+2.clone():	Returns a shallow copy of this identity hash map: the keys and values themselves are not cloned.
+3.containsKey?(Object key): Tests whether the specified object reference is a key in this identity hash map.
+4.containsValue?(Object value): Tests whether the specified object reference is a value in this identity hash map.
+5.entrySet(): Returns a Set view of the mappings contained in this map.
+6.equals?(Object o): Compares the specified object with this map for equality.
+7.get?(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+8.hashCode():	Returns the hash code value for this map.
+9.isEmpty(): Returns true if this identity hash map contains no key-value mappings.
+10.keySet()	Returns an identity-based set view of the keys contained in this map.
+11.put?(K key, V value)	Associates the specified value with the specified key in this identity hash map.
+12.putAll?(Map<? extends K,?? extends V> m)	Copies all of the mappings from the specified map to this map.
+13.remove?(Object key)	Removes the mapping for this key from this map if present.
+14.size()	Returns the number of key-value mappings in this identity hash map.
+15.values()	Returns a Collection view of the values contained in this map.
+    Methods declared in class java.util.AbstractMap
+1. toString()	Returns a string representation of this map.
+    Methods declared in interface java.util.Map
+1.compute?(K key, BiFunction<? super K,?? super V,?? extends V> remappingFunction)
+Attempts to compute a mapping for the specified key and its current mapped value
+2.computeIfAbsent?(K key, Function<? super K,?? extends V> mappingFunction)
+If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.
+3.computeIfPresent?(K key, BiFunction<? super K,?? super V,?? extends V> remappingFunction)
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+4.forEach?(BiConsumer<? super K,?? super V> action)
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+5.getOrDefault?(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+6.merge?(K key, V value, BiFunction<? super V,?? super V,?? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+7.putIfAbsent?(K key, V value)
+If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+8.remove?(Object key, Object value)
+Removes the entry for the specified key only if it is currently mapped to the specified value.
+9.replace?(K key, V value)
+Replaces the entry for the specified key only if it is currently mapped to some value.
+10.replace?(K key, V oldValue, V newValue)
+Replaces the entry for the specified key only if currently mapped to the specified value.
+11.replaceAll?(BiFunction<? super K,?? super V,?? extends V> function)
+Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.
+    IdentityHashMap vs HashMap
+-IdentityHashMap uses the equality operator "==" for comparing keys and values while HashMap uses the equals method for comparing keys and values inside Map.
+
+    Utility and Supporting Classes
+Java provides helper classes and interfaces to enhance collection usage.
+They include Collections, Iterator, Comparator and other tools for iteration and sorting.
